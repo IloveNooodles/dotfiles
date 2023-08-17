@@ -6,6 +6,7 @@ My desktop configuration for various tools
 
 - vim
 - tmux
+- zsh
 
 ## How to install
 Just paste the dotfiles in your home (~) directory and type `source ~/<anyconfigfiles>`
