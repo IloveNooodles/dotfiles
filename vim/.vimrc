@@ -4,8 +4,18 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+" Python
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+
+
 " Define plugins
 call plug#begin()
+
+" Test
+Plug 'vim-syntastic/syntastic'
+Plug 'nvie/vim-flake8'
+Plug 'vim-scripts/indentpython.vim'
+Plug 'Valloric/YouCompleteMe'
 
 " Comment
 Plug 'tpope/vim-commentary'
@@ -36,8 +46,9 @@ Plug 'maxmellon/vim-jsx-pretty'
 
 " Nerdtree
 Plug 'preservim/nerdtree'
-
 Plug 'dense-analysis/ale'
+Plug 'tmhedberg/SimpylFold'
+
 call plug#end()
 
 " Map the leader key to a comma
@@ -46,7 +57,7 @@ let g:mapleader = ','
 
 " Set line numbers
 set number
-" set relativenumber
+set relativenumber
 
 " Configure indent with spaces
 syntax on
@@ -56,8 +67,13 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set cursorline
+
 " Do not keep a backup file
 set nobackup
+
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
 
 " Disable auto comments
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -86,6 +102,7 @@ set signcolumn=yes
 set shortmess=I
 
 " Key maps
+" Enable folding with the spacebar
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
@@ -94,3 +111,6 @@ map <C-l> <C-W>l
 map <C-d> <C-d>zz
 map <C-u> <C-u>zz
 inoremap jj <esc>
+
+" Enable folding with the spacebar
+nnoremap <space> za
