@@ -51,11 +51,12 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="/Users/gawrgare/Library/Python/3.9/bin:$PATH"
+export PATH="$PATH:/usr/bin"
 
 # ==== Alias
 alias arm="env /usr/bin/arch -arm64 /bin/zsh --login"
 alias intel="env /usr/bin/arch -x86_64 /bin/zsh --login"
-alias cat="bat --paging=never"
+# alias cat="bat --paging=never"
 alias ls="ls -lah"
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
@@ -64,6 +65,10 @@ alias l="ls -lF -G"
 alias la="ls -laF -G"
 alias lsd="ls -lF -G | grep --color=never '^d'"
 alias ls="command ls -G"
+alias python="/usr/bin/python3"
+alias pn="pnpm"
+alias k="kubectl"
+alias gs="git status"
 
 # ==== Function
 # alias zshconfig="mate ~/.zshrc"
@@ -71,3 +76,16 @@ alias ls="command ls -G"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# pnpm
+export PNPM_HOME="/Users/gawrgare/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+# bun completions
+[ -s "/Users/gawrgare/.bun/_bun" ] && source "/Users/gawrgare/.bun/_bun"
+
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
