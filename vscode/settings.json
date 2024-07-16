@@ -1,0 +1,365 @@
+{
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "Community Material Theme Ocean",
+  "workbench.colorCustomizations": {
+    "activityBarBadge.background": "#7CB342",
+    "activityBar.activeBorder": "#7CB342",
+    "list.activeSelectionForeground": "#7CB342",
+    "list.inactiveSelectionForeground": "#7CB342",
+    "list.highlightForeground": "#7CB342",
+    "scrollbarSlider.activeBackground": "#7CB34250",
+    "editorSuggestWidget.highlightForeground": "#7CB342",
+    "textLink.foreground": "#7CB342",
+    "progressBar.background": "#7CB342",
+    "pickerGroup.foreground": "#7CB342",
+    "tab.activeBorder": "#7CB342",
+    "notificationLink.foreground": "#7CB342",
+    "editorWidget.resizeBorder": "#7CB342",
+    "editorWidget.border": "#7CB342",
+    "settings.modifiedItemIndicator": "#7CB342",
+    "settings.headerForeground": "#7CB342",
+    "panelTitle.activeBorder": "#7CB342",
+    "breadcrumb.activeSelectionForeground": "#7CB342",
+    "menu.selectionForeground": "#7CB342",
+    "menubar.selectionForeground": "#7CB342",
+    "editor.findMatchBorder": "#7CB342",
+    "selection.background": "#7CB34240",
+    "statusBarItem.remoteBackground": "#7CB342"
+  },
+  "materialTheme.accent": "Lime",
+  "editor.linkedEditing": true,
+  "C_Cpp.updateChannel": "Insiders",
+  "python.languageServer": "Default",
+  "files.autoSave": "afterDelay",
+  "code-runner.runInTerminal": true,
+  "workbench.editor.showTabs": "single",
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
+  },
+  "git.postCommitCommand": "push",
+  "git.autofetch": true,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "ejs": "html",
+    "vue-html": "html"
+  },
+  "code-runner.executorMap": {
+    "javascript": "node",
+    "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
+    "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "objective-c": "cd $dir && gcc -framework Cocoa $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "php": "php",
+    "python": "python3 -u",
+    "perl": "perl",
+    "perl6": "perl6",
+    "ruby": "ruby",
+    "go": "go run",
+    "lua": "lua",
+    "groovy": "groovy",
+    "powershell": "powershell -ExecutionPolicy ByPass -File",
+    "bat": "cmd /c",
+    "shellscript": "bash",
+    "fsharp": "fsi",
+    "csharp": "scriptcs",
+    "vbscript": "cscript //Nologo",
+    "typescript": "deno run",
+    "coffeescript": "coffee",
+    "scala": "scala",
+    "swift": "swift",
+    "julia": "julia",
+    "crystal": "crystal",
+    "ocaml": "ocaml",
+    "r": "Rscript",
+    "applescript": "osascript",
+    "clojure": "lein exec",
+    "haxe": "haxe --cwd $dirWithoutTrailingSlash --run $fileNameWithoutExt",
+    "rust": "cd $dir && rustc $fileName && $dir$fileNameWithoutExt",
+    "racket": "racket",
+    "scheme": "csi -script",
+    "ahk": "autohotkey",
+    "autoit": "autoit3",
+    "dart": "dart",
+    "pascal": "cd $dir && fpc $fileName && $dir$fileNameWithoutExt",
+    "d": "cd $dir && dmd $fileName && $dir$fileNameWithoutExt",
+    "haskell": "runhaskell",
+    "nim": "nim compile --verbosity:0 --hints:off --run",
+    "lisp": "sbcl --script",
+    "kit": "kitc --run",
+    "v": "v run",
+    "sass": "sass --style expanded",
+    "scss": "scss --style expanded",
+    "less": "cd $dir && lessc $fileName $fileNameWithoutExt.css",
+    "FortranFreeForm": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "fortran-modern": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "fortran_fixed-form": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "fortran": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
+  },
+  "editor.fontSize": 14,
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "beautify.config": "",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+  },
+  "settingsSync.ignoredExtensions": [
+    "ms-vscode.cpptools"
+  ],
+  "C_Cpp.default.includePath": [],
+  "C_Cpp.intelliSenseEngineFallback": "Enabled",
+  "C_Cpp.intelliSenseUpdateDelay": 1000,
+  "[cpp]": {
+    "editor.wordBasedSuggestions": "matchingDocuments",
+    "editor.suggest.insertMode": "replace",
+    "editor.semanticHighlighting.enabled": true,
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+  "[go]": {
+    "editor.insertSpaces": true,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "golang.go"
+  },
+  "[java]": {
+    "editor.defaultFormatter": "redhat.java"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+  "liveServer.settings.donotShowInfoMsg": true,
+  // "prettier.semi": false,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "all",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.fontFamily": "Fira Code Nerd Font Mono, agave NF, agave Nerd Font Mono , Fira Code, Consolas, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "remote.downloadExtensionsLocally": true,
+  "launch": {
+    "configurations": [],
+    "compounds": []
+  },
+  "security.workspace.trust.untrustedFiles": "newWindow",
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+  "go.toolsManagement.autoUpdate": true,
+  "terminal.integrated.fontFamily": "MesloLGS NF, agave NF, agave Nerd Font Mono, Fira Code Nerd Font Mono , Fira Code, Consolas, 'Courier New', monospace",
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell"
+    },
+    "Command Prompt": {
+      "path": [
+        "${env:windir}\\Sysnative\\cmd.exe",
+        "${env:windir}\\System32\\cmd.exe"
+      ],
+      "args": [],
+      "icon": "terminal-cmd"
+    },
+    "Git Bash": {
+      "source": "Git Bash"
+    },
+    "Windows PowerShell": {
+      "path": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+    }
+  },
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "editor.cursorBlinking": "phase",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.cursorStyle": "line-thin",
+  "bracketPairColorizer.depreciation-notice": false,
+  "editor.inlineSuggest.enabled": true,
+  "editor.formatOnSave": true,
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python",
+    "editor.formatOnType": true
+  },
+  "github.copilot.enable": {
+    "*": false,
+    "yaml": false,
+    "plaintext": false,
+    "markdown": false
+  },
+  "gitlens.hovers.currentLine.over": "line",
+  "[csharp]": {
+    "editor.defaultFormatter": "ms-dotnettools.csharp"
+  },
+  "security.workspace.trust.startupPrompt": "never",
+  "security.workspace.trust.banner": "always",
+  "security.workspace.trust.enabled": false,
+  "svelte.enable-ts-plugin": true,
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+  },
+  "editor.guides.bracketPairs": true,
+  "deno.codeLens.implementations": true,
+  "deno.codeLens.references": true,
+  "deno.codeLens.referencesAllFunctions": true,
+  "deno.codeLens.test": true,
+  "deno.suggest.completeFunctionCalls": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "git.mergeEditor": false,
+  "indentRainbow.colors": [
+    "rgba(3, 4, 94,0.15)",
+    "rgba(2, 62, 138,0.15)",
+    "rgba(0, 119, 182, 0.15)",
+    "rgba(0, 150, 199,0.15)",
+    "rgba(0, 180, 216,0.15)",
+    "rgba(72, 202, 228,0.15)",
+    "rgba(144, 224, 239,0.15)",
+    "rgba(144, 224, 239,0.1)",
+    "rgba(144, 224, 239,0.05)",
+    "rgba(144, 224, 239,0.025)"
+  ],
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit"
+  },
+  "python.autoComplete.extraPaths": [],
+  "python.analysis.extraPaths": [],
+  "C_Cpp.intelliSenseCacheSize": 500,
+  "explorer.confirmDragAndDrop": false,
+  "[terraform]": {
+    "editor.defaultFormatter": "hashicorp.terraform"
+  },
+  "emmet.triggerExpansionOnTab": true,
+  "better-comments.highlightPlainText": true,
+  "better-comments.multilineComments": true,
+  "editor.stickyScroll.enabled": true,
+  "files.eol": "\n",
+  "editor.formatOnPaste": true,
+  "C_Cpp.default.cStandard": "gnu11",
+  "C_Cpp.default.cppStandard": "c++11",
+  "workbench.settings.applyToAllProfiles": [
+    "editor.fontFamily"
+  ],
+  "git.openRepositoryInParentFolders": "never",
+  "[latex]": {
+    "editor.defaultFormatter": "James-Yu.latex-workshop"
+  },
+  "zig.initialSetupDone": true,
+  "zig.path": "zig",
+  "eslint.format.enable": true,
+  "window.zoomLevel": 1,
+  "githubPullRequests.pullBranch": "never",
+  "zig.zls.path": "zls",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.parameterHints.enabled": true,
+  "vim.foldfix": true,
+  "vim.startInInsertMode": true,
+  "vim.smartRelativeLine": true,
+  "editor.cursorSurroundingLines": 10,
+  "vim.normalModeKeyBindings": [
+    {
+      "before": [
+        "<leader>",
+        "e"
+      ],
+      "commands": [
+        "workbench.view.explorer"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "p",
+        "d"
+      ],
+      "commands": [
+        "editor.action.peekDefinition"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "h"
+      ],
+      "commands": [
+        "editor.action.showDefinitionPreviewHover"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "i"
+      ],
+      "commands": [
+        "editor.action.goToImplementation"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "p",
+        "i"
+      ],
+      "commands": [
+        "editor.action.peekImplementation"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "q"
+      ],
+      "commands": [
+        "editor.action.quickFix"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "r"
+      ],
+      "commands": [
+        "editor.action.referenceSearch.trigger"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "t"
+      ],
+      "commands": [
+        "editor.action.goToTypeDefinition"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "p",
+        "t"
+      ],
+      "commands": [
+        "editor.action.peekTypeDefinition"
+      ]
+    }
+  ],
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.color": "#a9dc7660",
+  "vim.highlightedyank.duration": 250,
+  "vim.useSystemClipboard": true
+}
+
+
+
+
+
+  
+    
+    
+    
+  
+  

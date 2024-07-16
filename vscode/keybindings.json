@@ -1,0 +1,122 @@
+[
+  {
+    "key": "shift+cmd+/",
+    "command": "editor.action.blockComment",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "shift+alt+a",
+    "command": "-editor.action.blockComment",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "cmd+l cmd+o",
+    "command": "-extension.liveServer.goOnline",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "cmd+l cmd+c",
+    "command": "-extension.liveServer.goOffline",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "cmd+d",
+    "command": "-extension.vim_cmd+d",
+    "when": "editorTextFocus && vim.active && vim.use<D-d> && !inDebugRepl"
+  },
+  {
+    "key": "down",
+    "command": "-extension.vim_down",
+    "when": "editorTextFocus && vim.active && !inDebugRepl && !parameterHintsVisible && !suggestWidgetVisible"
+  },
+  {
+    "key": "up",
+    "command": "-extension.vim_up",
+    "when": "editorTextFocus && vim.active && !inDebugRepl && !parameterHintsVisible && !suggestWidgetVisible"
+  },
+  {
+    "key": "cmd+c",
+    "command": "-extension.vim_cmd+c",
+    "when": "editorTextFocus && vim.active && vim.overrideCopy && vim.use<D-c> && !inDebugRepl"
+  },
+  {
+    "key": "left",
+    "command": "-extension.vim_left",
+    "when": "editorTextFocus && vim.active && !inDebugRepl"
+  },
+  {
+    "key": "right",
+    "command": "-extension.vim_right",
+    "when": "editorTextFocus && vim.active && !inDebugRepl"
+  },
+  {
+    "key": "escape",
+    "command": "extension.vim_escape",
+    "when": "editorTextFocus && vim.active && !inDebugRepl && !parameterHintsVisible && !suggestWidgetVisible"
+  },
+  {
+    "key": "escape",
+    "command": "-extension.vim_escape",
+    "when": "editorTextFocus && vim.active && !inDebugRepl"
+  },
+  {
+    "key": "tab",
+    "command": "-extension.vim_tab",
+    "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
+  },
+  {
+    "key": "h",
+    "command": "editor.action.scrollLeftHover",
+    "when": "editorHoverFocused"
+  },
+  {
+    "key": "j",
+    "command": "editor.action.scrollDownHover",
+    "when": "editorHoverFocused"
+  },
+  {
+    "key": "k",
+    "command": "editor.action.scrollUpHover",
+    "when": "editorHoverFocused"
+  },
+  {
+    "key": "l",
+    "command": "editor.action.scrollRightHover",
+    "when": "editorHoverFocused"
+  },
+  {
+    "key": "space e",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "a",
+    "command": "explorer.newFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "f",
+    "command": "explorer.newFolder",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "r",
+    "command": "renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "x",
+    "command": "filesExplorer.cut",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "y",
+    "command": "filesExplorer.copy",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
+  },
+  {
+    "key": "p",
+    "command": "filesExplorer.paste",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
+  }
+]
