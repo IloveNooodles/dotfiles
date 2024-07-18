@@ -69,6 +69,7 @@ alias python="/usr/bin/python3"
 alias pn="pnpm"
 alias k="kubectl"
 alias gs="git status"
+alias lg='lazygit'
 
 # ==== Function
 # alias zshconfig="mate ~/.zshrc"

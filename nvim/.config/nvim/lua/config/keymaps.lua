@@ -10,3 +10,5 @@ vim.keymap.set("n", "<leader>sx", require("telescope.builtin").resume, {
 vim.keymap.set("n", "<leader>fB", ":Telescope file_browser path=%:p:h=%:p:h<CR>", {
   desc = "Browse Files",
 })
+
+vim.keymap.set("v", "<leader>p", '"_dP', {})
