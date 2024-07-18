@@ -52,8 +52,8 @@ Plug 'tmhedberg/SimpylFold'
 call plug#end()
 
 " Map the leader key to a comma
-let mapleader = ','
-let g:mapleader = ','
+let mapleader = ' '
+let g:mapleader = ' '
 
 " Set line numbers
 set number
@@ -114,3 +114,28 @@ inoremap jj <esc>
 
 " Enable folding with the spacebar
 nnoremap <space> za
+
+" Paste to register
+nnoremap d "_d
+vnoremap d "_d
+nnoremap D "_D
+vnoremap D "_D
+nnoremap c "_c
+vnoremap c "_c
+nnoremap C "_C
+vnoremap C "_C
+
+" Move Lines (Normal Mode)
+nnoremap <A-j> :m .+1<cr>=
+
+nnoremap <A-k> :m .-2<cr>=
+
+" Move Lines (Insert Mode)
+inoremap <A-j> <Esc>:m .+1<cr>==gi
+
+inoremap <A-k> <Esc>:m .-2<cr>==gi
+
+" Move Lines (Visual Mode)
+vnoremap <A-j> :m '>+1<cr>gv=gv
+
+vnoremap <A-k> :m '<-2<cr>gv=gv
