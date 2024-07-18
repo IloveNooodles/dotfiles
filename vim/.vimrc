@@ -101,6 +101,9 @@ set signcolumn=yes
 " Disable startup page
 set shortmess=I
 
+" Set Scrolloff
+set scrolloff=15
+
 " Key maps
 " Enable folding with the spacebar
 map <C-j> <C-W>j
@@ -110,7 +113,6 @@ map <C-l> <C-W>l
 
 map <C-d> <C-d>zz
 map <C-u> <C-u>zz
-inoremap jj <esc>
 
 " Enable folding with the spacebar
 nnoremap <space> za
@@ -125,17 +127,33 @@ vnoremap c "_c
 nnoremap C "_C
 vnoremap C "_C
 
-" Move Lines (Normal Mode)
-nnoremap <A-j> :m .+1<cr>=
+" better up/down
+nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
+xnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
+nnoremap <expr> <Down> (v:count == 0 ? 'gj' : 'j')
+xnoremap <expr> <Down> (v:count == 0 ? 'gj' : 'j')
+nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
+xnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
+nnoremap <expr> <Up> (v:count == 0 ? 'gk' : 'k')
+xnoremap <expr> <Up> (v:count == 0 ? 'gk' : 'k')
 
-nnoremap <A-k> :m .-2<cr>=
+" better indenting
+vnoremap < <gv
+vnoremap > >gv
 
-" Move Lines (Insert Mode)
-inoremap <A-j> <Esc>:m .+1<cr>==gi
+" save file
+nnoremap <C-s> :w<cr><esc>
+xnoremap <C-s> :w<cr><esc>
+inoremap <C-s> <esc>:w<cr><esc>
+snoremap <C-s> <esc>:w<cr><esc>
 
-inoremap <A-k> <Esc>:m .-2<cr>==gi
+inoremap . .<c-g>u
+inoremap ; ;<c-g>u
 
-" Move Lines (Visual Mode)
+" Move lines up and down
+nnoremap <A-j> :m .+1<cr>==
+nnoremap <A-k> :m .-2<cr>==
+inoremap <A-j> <esc>:m .+1<cr>==gi
+inoremap <A-k> <esc>:m .-2<cr>==gi
 vnoremap <A-j> :m '>+1<cr>gv=gv
-
 vnoremap <A-k> :m '<-2<cr>gv=gv
