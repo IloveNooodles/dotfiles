@@ -17,3 +17,30 @@ vim.api.nvim_create_autocmd({ "VimEnter" }, {
     vim.cmd("TwilightEnable")
   end,
 })
+
+local notify_backup = vim.notify
+
+-- Disable notifications
+local function disable_notifications()
+  vim.notify = function() end
+end
+
+-- Enable notifications
+local function enable_notifications()
+  vim.notify = notify_backup
+end
+
+-- Autocmd for Rust files
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "rust",
+  callback = function()
+    disable_notifications()
+  end,
+})
+
+vim.api.nvim_create_autocmd("BufLeave", {
+  pattern = "*.rs",
+  callback = function()
+    enable_notifications()
+  end,
+})
