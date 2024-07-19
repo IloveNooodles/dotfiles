@@ -52,6 +52,15 @@ export NVM_DIR="$HOME/.nvm"
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="/Users/gawrgare/Library/Python/3.9/bin:$PATH"
 export PATH="$PATH:/usr/bin"
+export PATH="$HOME/.tmuxifier/bin:$PATH"
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+
+# tmuxifier
+export TMUXIFIER_NO_COMPLETE=1
+export EDITOR=nvim
+
+# Eval
+eval "$(tmuxifier init -)"
 
 # ==== Alias
 alias arm="env /usr/bin/arch -arm64 /bin/zsh --login"
@@ -70,7 +79,7 @@ alias pn="pnpm"
 alias k="kubectl"
 alias gs="git status"
 alias lg='lazygit'
-
+alias tmuxy="tmuxifier"
 # ==== Function
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
@@ -78,15 +87,5 @@ alias lg='lazygit'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# pnpm
-export PNPM_HOME="/Users/gawrgare/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-
 # bun completions
 [ -s "/Users/gawrgare/.bun/_bun" ] && source "/Users/gawrgare/.bun/_bun"
-
-export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
