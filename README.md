@@ -18,6 +18,8 @@ My desktop configuration for various tools
 - zsh
 - nvim
 - gdb
+- brew
+- vscode
 
 ## How to install
 
