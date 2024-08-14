@@ -22,6 +22,10 @@ My desktop configuration for various tools
 - brew
 - vscode
 - mise
+- fish
+- wezterm
+- kitty
+- starship
 
 ## How to install
 
