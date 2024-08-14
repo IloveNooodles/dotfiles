@@ -17,24 +17,9 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 
 #ZSH_THEME="robbyrussell"
-ZSH_THEME="powerlevel10k/powerlevel10k"
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+#ZSH_THEME="powerlevel10k/powerlevel10k"
+#ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
-# CASE_SENSITIVE="true"
-# HYPHEN_INSENSITIVE="true"
-
-# zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
-# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
-# zstyle ':omz:update' frequency 13
-
-# DISABLE_MAGIC_FUNCTIONS="true"
-# DISABLE_LS_COLORS="true"
-# DISABLE_AUTO_TITLE="true"
-# ENABLE_CORRECTION="true"
-
-# Available "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
 
 plugins=(
 	git
@@ -43,7 +28,8 @@ plugins=(
   z
 )
 
-source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh
+eval "$(starship init zsh)"
 
 # ==== Export
 export ZSH="$HOME/.oh-my-zsh"
@@ -51,6 +37,10 @@ export PATH="/Users/gawrgare/Library/Python/3.9/bin:$PATH"
 export PATH="$PATH:/usr/bin"
 export PATH="$HOME/.tmuxifier/bin:$PATH"
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+export GOPATH=$HOME/go
+export GOROOT="$(brew --prefix golang)/libexec"
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
 
 # tmuxifier
 export TMUXIFIER_NO_COMPLETE=1
@@ -82,12 +72,11 @@ alias tmuxy="tmuxifier"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # bun completions
 [ -s "/Users/gawrgare/.bun/_bun" ] && source "/Users/gawrgare/.bun/_bun"
 
-# Mise things
 export MISE_SHELL=zsh
 export __MISE_ORIG_PATH="$PATH"
 
