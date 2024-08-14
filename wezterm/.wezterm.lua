@@ -9,7 +9,7 @@ end
 
 -- config.enable_kitty_keyboard = true
 -- config.enable_csi_u_key_encoding = true
-config.term = 'wezterm'
+config.term = "wezterm"
 
 -- For example, changing the color scheme:
 config.color_scheme = "Catppuccin Mocha (Gogh)"
@@ -100,6 +100,26 @@ config.keys = {
 		mods = "LEADER",
 		key = "UpArrow",
 		action = wezterm.action.AdjustPaneSize({ "Up", 5 }),
+	},
+	{
+		mods = "META",
+		key = "LeftArrow",
+		action = wezterm.action({ SendString = "\x1bb" }),
+	},
+	{
+		mods = "META",
+		key = "RightArrow",
+		action = wezterm.action({ SendString = "\x1bf" }),
+	},
+	{
+		mods = "CMD",
+		key = "LeftArrow",
+		action = wezterm.action({ SendString = "\x1bOH" }),
+	},
+	{
+		mods = "CMD",
+		key = "RightArrow",
+		action = wezterm.action({ SendString = "\x1bOF" }),
 	},
 }
 

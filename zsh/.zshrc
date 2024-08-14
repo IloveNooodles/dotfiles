@@ -30,7 +30,8 @@ plugins=(
 
 # source $ZSH/oh-my-zsh.sh
 eval "$(starship init zsh)"
-
+eval "$(zoxide init zsh)"
+source <(fzf --zsh)
 # ==== Export
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="/Users/gawrgare/Library/Python/3.9/bin:$PATH"
