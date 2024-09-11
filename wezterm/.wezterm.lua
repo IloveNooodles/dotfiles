@@ -10,6 +10,7 @@ end
 -- config.enable_kitty_keyboard = true
 -- config.enable_csi_u_key_encoding = true
 config.term = "wezterm"
+config.term = "xterm-256color"
 
 -- For example, changing the color scheme:
 config.color_scheme = "Catppuccin Mocha (Gogh)"
