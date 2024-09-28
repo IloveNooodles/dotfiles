@@ -131,3 +131,4 @@ if [ -z "${_mise_cmd_not_found:-}" ]; then
         fi
     }
 fi
+. "/Users/gawrgare/.deno/env"
