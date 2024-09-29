@@ -9,6 +9,3 @@ zoxide init fish | source
 fzf --fish | source
 mise activate fish | source
 eval (tmuxifier init - fish)
-
-fish_add_path /Users/gawrgare/.cargo/bin
-fish_add_path /Users/gawrgare/.local/bin

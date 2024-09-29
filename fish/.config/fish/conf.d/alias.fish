@@ -12,3 +12,4 @@ alias k kubectl
 alias gs "git status"
 alias lg lazygit
 alias tmuxy tmuxifier
+alias cat "bat --paging=never"
