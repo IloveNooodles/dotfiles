@@ -15,7 +15,7 @@ config.term = "xterm-256color"
 -- For example, changing the color scheme:
 config.color_scheme = "Catppuccin Mocha (Gogh)"
 config.font = wezterm.font_with_fallback({
-	{ family = "MesloLGS NF", scale = 1.2 },
+	{ family = "MesloLGS Nerd Font", scale = 1.2 },
 })
 config.font_size = 16.0
 
