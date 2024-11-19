@@ -1,7 +1,7 @@
 source ~/.config/fish/conf.d/abbr.fish
 source ~/.config/fish/conf.d/alias.fish
-source ~/.config/fish/conf.d/path.fish
 source ~/.config/fish/conf.d/variables.fish
+source ~/.config/fish/conf.d/path.fish
 
 ## Plugins
 starship init fish | source
