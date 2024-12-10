@@ -26,6 +26,29 @@ My desktop configuration for various tools
 - wezterm
 - kitty
 - starship
+- aerospace
+
+## Tools
+
+### tmux
+
+tmux is terminal multiplexer, i used tmux mainly for the work
+
+### wezterm
+
+wezterm is the terminal application, i used this because it has the kitty image protocol and also a lot of good stuff and can integrate well with tmux
+
+### fish
+
+fish is friendly shell, the syntax is a bit different from the zsh or bash but it has some nice feature in it
+
+### mise
+
+mise is tool version manager for all of the programming language from ruby, node and all
+
+### aerospace
+
+aerospace is tiling manager for mac-OS, the configuration is similar to i3
 
 ## How to install
 
