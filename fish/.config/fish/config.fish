@@ -7,6 +7,7 @@ source ~/.config/fish/conf.d/functions.fish
 ## Plugins
 starship init fish | source
 zoxide init fish | source
+direnv hook fish | source
 fzf --fish | source
 mise activate fish | source
 eval (tmuxifier init - fish)
