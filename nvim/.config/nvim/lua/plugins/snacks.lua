@@ -60,6 +60,15 @@ return {
     scroll = { enabled = true },
     statuscolumn = { enabled = true },
     words = { enabled = true },
+    lazygit = {
+      enabled = true,
+    },
+    profiler = {
+      enabled = true,
+    },
+    scope = {
+      enabled = true,
+    },
     styles = {
       notification = {
         -- wo = { wrap = true } -- Wrap notifications
