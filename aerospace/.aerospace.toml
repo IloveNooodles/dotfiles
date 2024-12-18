@@ -149,6 +149,8 @@ alt-shift-enter = 'mode apps'
 alt-a = 'exec-and-forget open -a /Applications/Arc.app'
 alt-o = 'exec-and-forget open -a /Applications/Obsidian.app'
 alt-q = 'exec-and-forget open -a /System/Applications/QuickTime Player.app'
+alt-f = "macos-native-fullscreen"
+alt-m = "macos-native-minimize"
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
