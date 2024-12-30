@@ -1,0 +1,42 @@
+# Set terminal type
+term = xterm-256color
+
+# Set color scheme
+theme = catppuccin-mocha
+
+# Configure font settings
+font-family = MesloLGS Nerd Font
+font-size = 16.0
+
+# Define keybindings
+# keybind = alt+q>c=new_tab
+# keybind = alt+q>x=close_pane
+# keybind = alt+q>b=prev_tab
+# keybind = alt+q>n=next_tab
+# keybind = alt+q+shift+|=split_horizontal
+# keybind = alt+q+shift+-=split_vertical
+# keybind = alt+q>h=focus_left
+# keybind = alt+q>j=focus_down
+# keybind = alt+q>k=focus_up
+# keybind = alt+q>l=focus_right
+# keybind = alt+q+left=resize_left
+# keybind = alt+q+right=resize_right
+# keybind = alt+q+down=resize_down
+# keybind = alt+q+up=resize_up
+# keybind = meta+left=send_string:\x1bb
+# keybind = meta+right=send_string:\x1bf
+# keybind = cmd+left=send_string:\x1bOH
+# keybind = cmd+right=send_string:\x1bOF
+
+# Map meta+number keys to activate corresponding tabs
+# keybind = meta+0=activate_tab:0
+# keybind = meta+1=activate_tab:1
+# keybind = meta+2=activate_tab:2
+# keybind = meta+3=activate_tab:3
+# keybind = meta+4=activate_tab:4
+# keybind = meta+5=activate_tab:5
+# keybind = meta+6=activate_tab:6
+# keybind = meta+7=activate_tab:7
+# keybind = meta+8=activate_tab:8
+# keybind = meta+9=activate_tab:9
+#
