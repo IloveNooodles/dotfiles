@@ -10,6 +10,7 @@ set -q MANPATH; or set MANPATH ''
 set -gx MANPATH /opt/homebrew/share/man $MANPATH
 set -q INFOPATH; or set INFOPATH ''
 set -gx INFOPATH /opt/homebrew/share/info $INFOPATH
+set -gx PATH $PATH $HOME/.krew/bin
 
 set -x ZSH "$HOME/.oh-my-zsh"
 set -x PATH "~/Library/Python/3.9/bin:$PATH"
