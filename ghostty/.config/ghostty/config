@@ -29,14 +29,24 @@ font-size = 16.0
 # keybind = cmd+right=send_string:\x1bOF
 
 # Map meta+number keys to activate corresponding tabs
-# keybind = meta+0=activate_tab:0
-# keybind = meta+1=activate_tab:1
-# keybind = meta+2=activate_tab:2
-# keybind = meta+3=activate_tab:3
-# keybind = meta+4=activate_tab:4
-# keybind = meta+5=activate_tab:5
-# keybind = meta+6=activate_tab:6
-# keybind = meta+7=activate_tab:7
-# keybind = meta+8=activate_tab:8
-# keybind = meta+9=activate_tab:9
-#
+# keybind = meta+1=switch_tab:1
+# keybind = meta+2=switch_tab:2
+# keybind = meta+3=switch_tab:3
+# keybind = meta+4=switch_tab:4
+# keybind = meta+5=switch_tab:5
+# keybind = meta+6=switch_tab:6
+# keybind = meta+7=switch_tab:7
+# keybind = meta+8=switch_tab:8
+# keybind = meta+9=switch_tab:9
+# keybind = meta+0=switch_tab:10
+
+# Meta + arrow keys for word movement
+keybind = meta+left=send_text:\x1bb
+keybind = meta+right=send_text:\x1bf
+
+# Command + arrow keys for line movement
+# keybind = command+left=send_text:\x1bOH
+# keybind = command+right=send_text:\x1bOF
+
+keybind = command+left=send:\x1bOH
+keybind = command+right=send:\x1bOF

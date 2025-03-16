@@ -27,6 +27,9 @@ My desktop configuration for various tools
 - kitty
 - starship
 - aerospace
+- lazyGit
+- ideavim
+- ghostty
 
 ## Tools
 
@@ -49,6 +52,15 @@ mise is tool version manager for all of the programming language from ruby, node
 ### aerospace
 
 aerospace is tiling manager for mac-OS, the configuration is similar to i3
+
+### LazyGit
+
+mac-OS
+
+```bash
+stow --target ~/Library/Application\ Support/lazygit/ lazygit/
+
+```
 
 ## How to install
 
