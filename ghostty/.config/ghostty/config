@@ -9,44 +9,19 @@ font-family = MesloLGM Nerd Font Mono
 font-size = 16.0
 
 # Define keybindings
-# keybind = alt+q>c=new_tab
-# keybind = alt+q>x=close_pane
-# keybind = alt+q>b=prev_tab
-# keybind = alt+q>n=next_tab
-# keybind = alt+q+shift+|=split_horizontal
-# keybind = alt+q+shift+-=split_vertical
-# keybind = alt+q>h=focus_left
-# keybind = alt+q>j=focus_down
-# keybind = alt+q>k=focus_up
-# keybind = alt+q>l=focus_right
-# keybind = alt+q+left=resize_left
-# keybind = alt+q+right=resize_right
-# keybind = alt+q+down=resize_down
-# keybind = alt+q+up=resize_up
-# keybind = meta+left=send_string:\x1bb
-# keybind = meta+right=send_string:\x1bf
-# keybind = cmd+left=send_string:\x1bOH
-# keybind = cmd+right=send_string:\x1bOF
+keybind = ctrl+b>shift+|=new_split:right
+keybind = ctrl+b>shift+-=new_split:down
+keybind = ctrl+b>left=resize_split:left,10
+keybind = ctrl+b>right=resize_split:right,10
+keybind = ctrl+b>down=resize_split:down,10
+keybind = ctrl+b>up=resize_split:up,10
+keybind = cmd+shift>r=reload_config
+keybind = cmd+shift>f=toggle_fullscreen
 
-# Map meta+number keys to activate corresponding tabs
-# keybind = meta+1=switch_tab:1
-# keybind = meta+2=switch_tab:2
-# keybind = meta+3=switch_tab:3
-# keybind = meta+4=switch_tab:4
-# keybind = meta+5=switch_tab:5
-# keybind = meta+6=switch_tab:6
-# keybind = meta+7=switch_tab:7
-# keybind = meta+8=switch_tab:8
-# keybind = meta+9=switch_tab:9
-# keybind = meta+0=switch_tab:10
-
-# Meta + arrow keys for word movement
-keybind = meta+left=send_text:\x1bb
-keybind = meta+right=send_text:\x1bf
-
-# Command + arrow keys for line movement
-# keybind = command+left=send_text:\x1bOH
-# keybind = command+right=send_text:\x1bOF
-
-keybind = command+left=send:\x1bOH
-keybind = command+right=send:\x1bOF
+# Keyboard navigation
+keybind = alt+left=text:\x1bb
+keybind = alt+right=text:\x1bf
+keybind = cmd+left=text:\x1bOH
+keybind = cmd+right=text:\x1bOF
+keybind = alt+shift+h=csi:1;D
+keybind = alt+shift+l=csi:1;C 
