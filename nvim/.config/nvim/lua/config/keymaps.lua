@@ -5,16 +5,10 @@
 local opts = { noremap = true, silent = true }
 
 -- remap the delete and change behaviour
-vim.keymap.set("n", "d", '"_d', opts)
-vim.keymap.set("n", "D", '"_D', opts)
-vim.keymap.set("v", "d", '"_d', opts)
-vim.keymap.set("v", "D", '"_D', opts)
-vim.keymap.set("n", "c", '"_c', opts)
-vim.keymap.set("v", "D", '"_D', opts)
-vim.keymap.set("n", "c", '"_c', opts)
-vim.keymap.set("v", "c", '"_c', opts)
-vim.keymap.set("n", "C", '"_C', opts)
-vim.keymap.set("v", "C", '"_C', opts)
+vim.keymap.set({"n", "v"}, "d", '"_d', opts)
+vim.keymap.set({"n", "v"}, "D", '"_D', opts)
+vim.keymap.set({"n", "v"}, "c", '"_c', opts)
+vim.keymap.set({"n", "v"}, "C", '"_C', opts)
 vim.keymap.set("v", "<", "<gv", opts)
 vim.keymap.set("v", ">", ">gv", opts)
 
@@ -74,26 +68,32 @@ if vim.g.vscode then
   -- paste preserves primal yanked piece
   keymap("v", "p", '"_dP', opts)
 
-  -- call vscode commands from neovim
-  keymap({ "n", "v" }, "<leader>t", function()
-    vscode.action("workbench.action.terminal.toggleTerminal")
-  end, opts)
-  keymap({ "n", "v" }, "<leader>a", function()
-    vscode.action("editor.action.quickFix")
-  end, opts)
-  keymap({ "n", "v" }, "<leader>e", function()
-    vscode.action("workbench.action.toggleSidebarVisibility")
-  end, opts)
-  keymap({ "n", "v" }, "<leader>sp", function()
-    vscode.action("workbench.actions.view.problems")
-  end, opts)
-  keymap({ "n", "v" }, "<leader>cn", function()
-    vscode.action("notifications.clearAll")
-  end, opts)
-  keymap({ "n", "v" }, "<leader>ff", function()
-    vscode.action("workbench.action.quickOpen")
-  end, opts)
-  keymap({ "n", "v" }, "<leader>fd", function()
-    vscode.action("editor.action.formatDocument")
-  end, opts)
+  -- Sidebar and Terminal visibility
+  keymap({ "n", "v" }, "<leader>t", "<cmd>lua require('vscode').action('workbench.action.terminal.toggleTerminal')<CR>", opts)
+  keymap({ "n", "v" }, "<leader>e", "<cmd>lua require('vscode').action('workbench.action.toggleSidebarVisibility')<CR>", opts)
+
+  -- quick action keymaps
+  keymap({ "n", "v" }, "<leader>qf", "<cmd>lua require('vscode').action('editor.action.quickFix')<CR>", opts)
+  keymap({ "n", "v" }, "<leader>fp", "<cmd>lua require('vscode').action('workbench.actions.view.problems')<CR>", opts)
+  keymap({ "n", "v" }, "<leader>ff", "<cmd>lua require('vscode').action('workbench.action.quickOpen')<CR>", opts)
+  keymap({ "n", "v" }, "<leader>fd", "<cmd>lua require('vscode').action('editor.action.formatDocument')<CR>", opts)
+
+  -- harpoon keymaps
+  keymap({"n", "v"}, "<leader>ha", "<cmd>lua require('vscode').action('vscode-harpoon.addEditor')<CR>", opts)
+  keymap({"n", "v"}, "<leader>ho", "<cmd>lua require('vscode').action('vscode-harpoon.editorQuickPick')<CR>", opts)
+  keymap({"n", "v"}, "<leader>he", "<cmd>lua require('vscode').action('vscode-harpoon.editEditors')<CR>", opts)
+  keymap({"n", "v"}, "<leader>h1", "<cmd>lua require('vscode').action('vscode-harpoon.gotoEditor1')<CR>", opts)
+  keymap({"n", "v"}, "<leader>h2", "<cmd>lua require('vscode').action('vscode-harpoon.gotoEditor2')<CR>", opts)
+  keymap({"n", "v"}, "<leader>h3", "<cmd>lua require('vscode').action('vscode-harpoon.gotoEditor3')<CR>", opts)
+  keymap({"n", "v"}, "<leader>h4", "<cmd>lua require('vscode').action('vscode-harpoon.gotoEditor4')<CR>", opts)
+  keymap({"n", "v"}, "<leader>h5", "<cmd>lua require('vscode').action('vscode-harpoon.gotoEditor5')<CR>", opts)
+  keymap({"n", "v"}, "<leader>h6", "<cmd>lua require('vscode').action('vscode-harpoon.gotoEditor6')<CR>", opts)
+  keymap({"n", "v"}, "<leader>h7", "<cmd>lua require('vscode').action('vscode-harpoon.gotoEditor7')<CR>", opts)
+  keymap({"n", "v"}, "<leader>h8", "<cmd>lua require('vscode').action('vscode-harpoon.gotoEditor8')<CR>", opts)
+  keymap({"n", "v"}, "<leader>h9", "<cmd>lua require('vscode').action('vscode-harpoon.gotoEditor9')<CR>", opts)
+  
+  -- project manager keymaps
+  keymap({"n", "v"}, "<leader>ap", "<cmd>lua require('vscode').action('projectManager.editProjects')<CR>", opts)
+  keymap({"n", "v"}, "<leader>sp", "<cmd>lua require('vscode').action('projectManager.saveProject')<CR>", opts)
+  keymap({"n", "v"}, "<leader>lp", "<cmd>lua require('vscode').action('projectManager.listProjectsNewWindow')<CR>", opts)
 end
