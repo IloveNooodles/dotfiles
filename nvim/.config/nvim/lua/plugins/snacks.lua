@@ -71,7 +71,8 @@ return {
     },
     styles = {
       notification = {
-        -- wo = { wrap = true } -- Wrap notifications
+        relative = "editor", -- Relative to the editor
+        wo = { wrap = true }, -- Wrap notifications
       },
     },
   },
