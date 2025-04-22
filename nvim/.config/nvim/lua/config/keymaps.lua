@@ -46,10 +46,7 @@ if vim.g.vscode then
   local vscode = require("vscode")
 
   -- Show whichkey using VSCode actions
-  keymap("n", "<leader><Space>", function()
-    vscode.action("whichkey.show")
-  end, opts)
-  keymap("x", "<leader><Space>", function()
+  keymap({ "n", "x" }, "<leader><Space>", function()
     vscode.action("whichkey.show")
   end, opts)
 
