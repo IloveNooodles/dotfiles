@@ -76,6 +76,11 @@ if vim.g.vscode then
     opts
   )
 
+  -- folding
+  keymap("n", "za", "<cmd>lua require('vscode').action('editor.toggleFold')<CR>", opts)
+  keymap("n", "zM", "<cmd>lua require('vscode').action('editor.foldAll')<CR>", opts)
+  keymap("n", "zR", "<cmd>lua require('vscode').action('editor.unfoldAll')<CR>", opts)
+
   -- quick action keymaps
   keymap({ "n", "v" }, "<leader>qf", "<cmd>lua require('vscode').action('editor.action.quickFix')<CR>", opts)
   keymap({ "n", "v" }, "<leader>fp", "<cmd>lua require('vscode').action('workbench.actions.view.problems')<CR>", opts)
