@@ -2,7 +2,7 @@
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.colorTheme": "Community Material Theme Ocean",
+  "workbench.colorTheme": "Material Theme Ocean",
   "workbench.colorCustomizations": {
     "activityBarBadge.background": "#7CB342",
     "activityBar.activeBorder": "#7CB342",
@@ -30,9 +30,8 @@
   },
   "materialTheme.accent": "Lime",
   "editor.linkedEditing": true,
-  "C_Cpp.updateChannel": "Insiders",
   "python.languageServer": "Default",
-  "files.autoSave": "afterDelay",
+  "files.autoSave": "onFocusChange",
   "code-runner.runInTerminal": true,
   "workbench.editor.showTabs": "single",
   "workbench.editorAssociations": {
@@ -125,6 +124,12 @@
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "golang.go"
   },
+  "[typescriptreact]": {
+    "editor.formatOnSave": false
+  },
+  "[vue]": {
+    "editor.formatOnSave": false
+  },
   "[java]": {
     "editor.defaultFormatter": "redhat.java"
   },
@@ -134,8 +139,7 @@
     "jupyter-notebook": "left"
   },
   "liveServer.settings.donotShowInfoMsg": true,
-  // "prettier.semi": false,
-  "prettier.singleQuote": true,
+  "prettier.singleQuote": false,
   "prettier.trailingComma": "all",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontFamily": "Fira Code Nerd Font Mono, agave NF, agave Nerd Font Mono , Fira Code, Consolas, 'Courier New', monospace",
@@ -153,7 +157,7 @@
     "**/.factorypath": true
   },
   "go.toolsManagement.autoUpdate": true,
-  "terminal.integrated.fontFamily": "MesloLGS NF, agave NF, agave Nerd Font Mono, Fira Code Nerd Font Mono , Fira Code, Consolas, 'Courier New', monospace",
+  "terminal.integrated.fontFamily": "MesloLGL NF, agave NF, agave Nerd Font Mono, Fira Code Nerd Font Mono , Fira Code, Consolas, 'Courier New', monospace",
   "terminal.integrated.profiles.windows": {
     "PowerShell": {
       "source": "PowerShell",
@@ -180,7 +184,6 @@
   "editor.cursorStyle": "line-thin",
   "bracketPairColorizer.depreciation-notice": false,
   "editor.inlineSuggest.enabled": true,
-  "editor.formatOnSave": true,
   "[python]": {
     "editor.defaultFormatter": "ms-python.python",
     "editor.formatOnType": true
@@ -236,18 +239,17 @@
   "better-comments.highlightPlainText": true,
   "better-comments.multilineComments": true,
   "editor.stickyScroll.enabled": true,
-  "files.eol": "\n",
-  "editor.formatOnPaste": true,
   "C_Cpp.default.cStandard": "gnu11",
   "C_Cpp.default.cppStandard": "c++11",
   "workbench.settings.applyToAllProfiles": ["editor.fontFamily"],
+  "workbench.activityBar.orientation": "vertical",
   "git.openRepositoryInParentFolders": "never",
   "[latex]": {
     "editor.defaultFormatter": "James-Yu.latex-workshop"
   },
   "zig.initialSetupDone": true,
   "zig.path": "zig",
-  "eslint.format.enable": true,
+  //"eslint.format.enable": true,
   "window.zoomLevel": 1,
   "githubPullRequests.pullBranch": "never",
   "zig.zls.path": "zls",
@@ -257,53 +259,45 @@
   "vim.startInInsertMode": false,
   "vim.smartRelativeLine": true,
   "editor.cursorSurroundingLines": 10,
-  /*   "vim.normalModeKeyBindings": [
-    {
-      "before": ["<leader>", "e"],
-      "commands": ["workbench.view.explorer"]
-    },
-    {
-      "before": ["g", "p", "d"],
-      "commands": ["editor.action.peekDefinition"]
-    },
-    {
-      "before": ["g", "h"],
-      "commands": ["editor.action.showDefinitionPreviewHover"]
-    },
-    {
-      "before": ["g", "i"],
-      "commands": ["editor.action.goToImplementation"]
-    },
-    {
-      "before": ["g", "p", "i"],
-      "commands": ["editor.action.peekImplementation"]
-    },
-    {
-      "before": ["g", "q"],
-      "commands": ["editor.action.quickFix"]
-    },
-    {
-      "before": ["g", "r"],
-      "commands": ["editor.action.referenceSearch.trigger"]
-    },
-    {
-      "before": ["g", "t"],
-      "commands": ["editor.action.goToTypeDefinition"]
-    },
-    {
-      "before": ["g", "p", "t"],
-      "commands": ["editor.action.peekTypeDefinition"]
-    }
-  ], */
   "vim.highlightedyank.enable": true,
   "vim.highlightedyank.color": "#a9dc7660",
   "vim.highlightedyank.duration": 250,
   "vim.useSystemClipboard": true,
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "d"],
+      "after": ["d", "d"]
+    },
+    {
+      "before": ["<C-n>"],
+      "commands": [":nohl"]
+    },
+    {
+      "before": ["K"],
+      "commands": ["lineBreakInsert"],
+      "silent": true
+    }
+  ],
+  "vim.leader": "<space>",
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false
+  },
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
   },
   "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
-  "vscode-neovim.neovimInitVimPaths.darwin": "/Users/gawrgare/.config/nvim/init.lua",
+  "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/nvim/init.lua",
   "whichkey.delay": 0,
   "whichkey.sortOrder": "alphabetically",
   "whichkey.bindings": [
@@ -876,5 +870,127 @@
       "type": "command",
       "command": "workbench.action.toggleZenMode"
     }
-  ]
+  ],
+  "terminal.integrated.defaultProfile.osx": "fish",
+  "circleci.hostUrl": "",
+  "redhat.telemetry.enabled": true,
+  "cursor.cpp.disabledLanguages": ["yaml", "plaintext", "markdown"],
+  "ruby.lint": {
+    "rubocop": {
+      "useBundler": true // enable rubocop via bundler
+    },
+    "reek": {
+      "useBundler": true // enable reek via bundler
+    }
+  },
+  "ruby.format": "rubocop",
+  "accessibility.signals.lineHasBreakpoint": {
+    "sound": "off",
+    "announcement": "auto"
+  },
+  "accessibility.signals.chatRequestSent": {
+    "sound": "off",
+    "announcement": "auto"
+  },
+  "accessibility.signals.chatResponseReceived": {
+    "sound": "off"
+  },
+  "accessibility.signals.clear": {
+    "sound": "off",
+    "announcement": "auto"
+  },
+  "accessibility.signals.onDebugBreak": {
+    "sound": "off",
+    "announcement": "auto"
+  },
+  "accessibility.signals.diffLineDeleted": {
+    "sound": "off"
+  },
+  "accessibility.signals.diffLineInserted": {
+    "sound": "off"
+  },
+  "accessibility.signals.diffLineModified": {
+    "sound": "off"
+  },
+  "accessibility.signals.positionHasError": {
+    "sound": "off",
+    "announcement": "auto"
+  },
+  "accessibility.signals.lineHasError": {
+    "sound": "off",
+    "announcement": "auto"
+  },
+  "accessibility.signals.lineHasFoldedArea": {
+    "sound": "off",
+    "announcement": "auto"
+  },
+  "accessibility.signals.lineHasInlineSuggestion": {
+    "sound": "off"
+  },
+  "accessibility.signals.noInlayHints": {
+    "sound": "off",
+    "announcement": "auto"
+  },
+  "accessibility.signals.notebookCellCompleted": {
+    "sound": "off",
+    "announcement": "auto"
+  },
+  "accessibility.signals.notebookCellFailed": {
+    "sound": "off",
+    "announcement": "auto"
+  },
+  "accessibility.signals.progress": {
+    "sound": "off",
+    "announcement": "auto"
+  },
+  "accessibility.signals.taskCompleted": {
+    "sound": "off",
+    "announcement": "auto"
+  },
+  "accessibility.signals.taskFailed": {
+    "sound": "off",
+    "announcement": "auto"
+  },
+  "accessibility.signals.terminalBell": {
+    "sound": "off",
+    "announcement": "auto"
+  },
+  "accessibility.signals.terminalCommandFailed": {
+    "sound": "off",
+    "announcement": "auto"
+  },
+  "accessibility.signals.terminalCommandSucceeded": {
+    "sound": "off",
+    "announcement": "auto"
+  },
+  "accessibility.signals.terminalQuickFix": {
+    "sound": "off",
+    "announcement": "auto"
+  },
+  "accessibility.signals.voiceRecordingStarted": {
+    "sound": "off"
+  },
+  "accessibility.signals.voiceRecordingStopped": {
+    "sound": "off"
+  },
+  "accessibility.signals.positionHasWarning": {
+    "sound": "off",
+    "announcement": "auto"
+  },
+  "accessibility.signals.lineHasWarning": {
+    "sound": "off",
+    "announcement": "auto"
+  },
+  "terminal.integrated.fontLigatures": true,
+  "files.insertFinalNewline": true,
+  "zenMode.centerLayout": false,
+  "zenMode.hideLineNumbers": false,
+  "zenMode.showTabs": "single",
+  "projectManager.git.baseFolders": ["~/mf", "~/projects"],
+  "editor.lineNumbers": "relative",
+  "editor.smoothScrolling": true,
+  "workbench.list.smoothScrolling": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnType": true
 }
