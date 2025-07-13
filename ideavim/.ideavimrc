@@ -1,0 +1,138 @@
+Plug 'tpope/vim-commentary'
+Plug 'easymotion/vim-easymotion'
+Plug 'machakann/vim-highlightedyank'
+Plug 'preservim/nerdtree'
+Plug 'justinmk/vim-sneak'
+Plug 'tpope/vim-surround'
+Plug 'chrisbra/matchit'
+set peekaboo
+set which-key
+
+let g:sneak#label = 1
+
+set nu
+set rnu
+set clipboard+=unnamed
+set clipboard+=ideaput
+set clipboard+=unnamedplus
+set ignorecase
+set smartcase
+set incsearch
+set hls
+set idearefactormode=keep
+set ideajoin
+" these 2 below are for which-key
+set notimeout
+set timeoutlen=5000
+
+sethandler ˙ a:vim
+sethandler ∆ a:vim
+sethandler ˚ a:vim
+sethandler ¬ a:vim
+sethandler <C-o> a:vim
+sethandler <C-i> a:vim
+
+let mapleader = " "
+nmap <BS> <leader>
+nmap <C-z> <Action>(ToggleDistractionFreeMode)
+inoremap <C-j><C-k> <Esc>
+vnoremap <C-j><C-k> <Esc>
+nnoremap <C-j><C-k> <Esc>
+nnoremap Y y$
+
+" use space for 2 leaders
+nmap <space> <leader><leader>
+
+nmap <C-w>c <Action>(CloseAllEditors)
+nmap <C-w>d <Action>(CloseAllEditorsButActive)
+nmap <C-w>q :q<CR>
+" for mac
+nmap ˙ <C-w>h
+nmap ∆ <C-w>j
+nmap ˚ <C-w>k
+nmap ¬ <C-w>l
+" for linux and windows
+nmap <A-h> <C-w>h
+nmap <A-j> <C-w>j
+nmap <A-k> <C-w>k
+nmap <A-l> <C-w>l
+
+vmap < <gv
+vmap > >gv
+nmap [[ <Action>(MethodUp)
+nmap ]] <Action>(MethodDown)
+nmap <leader>fc <Action>(CollapseRegion)
+nmap <leader>fo <Action>(ExpandRegion)
+
+nmap <leader>la <Action>(Refactorings.QuickListPopupAction)
+nmap <Leader>lf <Action>(ReformatCode)
+xmap <Leader>lf <Action>(ReformatCode)
+nmap <leader>tf <Action>(GotoFile)
+nmap <leader>l] <Action>(GotoNextError)
+nmap <leader>l[ <Action>(GotoPreviousError)
+
+nmap <leader>tb <Action>(RecentFiles)
+nmap <leader>tf <Action>(com.mituuz.fuzzier.Fuzzier)
+nmap <leader>ts <Action>(com.mituuz.fuzzier.Fuzzier)
+nmap <leader>th <Action>(RecentFiles)
+nmap <leader>tw <Action>(com.mituuz.fuzzier.FuzzyGrep)
+nmap <leader>bb <Action>(Switcher)
+nmap <leader>bS <Action>(Scratch.ShowFilesPopup)
+nmap <leader>ff <Action>(com.mituuz.fuzzier.Fuzzier)
+nmap <leader>fg <action>(com.mituuz.fuzzier.FuzzierVCS)
+nmap <leader>fh <Action>(RecentFiles)
+nmap <leader>fm <action>(com.mituuz.fuzzier.FuzzyMover)
+nmap <leader>fy <action>(CopyReferencePopupGroup)
+nmap <leader>// <Action>(ReplaceInPath)
+nmap <leader>/s <Action>(com.mituuz.fuzzier.FuzzyGrep)
+
+nmap <C-l> :noh<CR>
+nmap <C-b> :NERDTree<CR>
+nmap - <Action>(OpenNetrw)
+
+" LSP-ish
+nmap gi <Action>(GotoImplementation)
+nmap gd <Action>(GotoDeclaration)
+nmap gp <Action>(GotoSuperMethod)
+nmap gt <Action>(GotoTest)
+nmap gb <Action>(Back)
+nmap <C-o> <Action>(Back)
+nmap gf <Action>(Forward)
+nmap <C-i> <Action>(Forward)
+nmap gh <Action>(QuickJavaDoc)
+nmap ge <Action>(ShowErrorDescription)
+nmap <leader>s <Action>(ActivateStructureToolWindow)
+
+" sneak
+xmap z <Plug>Sneak_z
+xmap Z <Plug>Sneak_Z
+map f <Plug>Sneak_f
+map F <Plug>Sneak_F
+map t <Plug>Sneak_t
+map T <Plug>Sneak_T
+
+" VCS
+" map <leader>gg <Action>(LazyGit.Open)
+" nmap <leader>gg <Action>(ActivateCommitToolWindow)
+" nmap <leader>gb <Action>(ActivateVersionControlToolWindow)
+nmap <leader>gg <Action>(ActivateVersionControlToolWindow)
+nmap <leader>gB <Action>(Annotate)
+nmap <leader>gu <Action>(Vcs.RollbackChangedLines)
+nmap <leader>gl <Action>(Vcs.UpdateProject)
+nmap <leader>gc <Action>(ActivateCommitToolWindow)
+nmap <leader>gp <Action>(Vcs.Push)
+nmap <leader>ga <Action>(Vcs.Add)
+nmap <leader>g[ <Action>(VcsShowPrevChangeMarker)
+nmap <leader>g] <Action>(VcsShowNextChangeMarker)
+nmap <leader>go <Action>(Github.Open.In.Browser)
+vmap <leader>go <Action>(Github.Open.In.Browser)
+
+nmap <leader>cl <Action>(copilot.chat.show)
+vmap <leader>cl <Action>(copilot.chat.show)
+
+nmap <leader>pp <Action>($LRU)
+
+nmap <leader>zz <Action>(LocalHistory.ShowHistory)
+" nmap <leader>zp <Action>(RecentChanges)
+nmap <leader>zp <Action>(LocalHistory.ShowProjectHistory)
+vmap <leader>zz <Action>(LocalHistory.ShowSelectionHistory)

@@ -69,6 +69,11 @@ if vim.g.vscode then
     "<cmd>lua require('vscode').action('workbench.action.terminal.toggleTerminal')<CR>",
     opts
   )
+
+  keymap({ "n" }, "gr", function()
+    vscode.action("editor.action.goToReferences")
+  end, opts)
+
   keymap(
     { "n", "v" },
     "<leader>e",
