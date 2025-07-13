@@ -3,7 +3,7 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 # add_newline = false
-add_newline = true 
+add_newline = true
 format = """$directory$character"""
 right_format = """$all"""
 palette = "catppuccin_mocha"
@@ -44,6 +44,10 @@ disabled = true
 symbol = "  "
 disabled = true
 
+[gradle]
+disabled = true
+symbol = "Gradle "
+
 [buf]
 symbol = " "
 
@@ -82,7 +86,7 @@ symbol = " "
 
 [git_branch]
 symbol = " "
-format =  '[$symbol$branch(:$remote_branch)]($style) '
+format = '[$symbol$branch(:$remote_branch)]($style) '
 
 [golang]
 symbol = " "
