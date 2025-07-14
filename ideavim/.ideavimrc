@@ -1,47 +1,44 @@
 Plug 'tpope/vim-commentary'
-Plug 'easymotion/vim-easymotion'
 Plug 'machakann/vim-highlightedyank'
 Plug 'preservim/nerdtree'
 Plug 'justinmk/vim-sneak'
 Plug 'tpope/vim-surround'
 Plug 'chrisbra/matchit'
+
+" search for actions: :actionlist <patter>
+set nu                            " line numbers
+set rnu                           " relative line numbers
+set hlsearch                      " highlight search occurrences
+set ignorecase                    " ignore case in search patterns
+set smartcase                     " no ignore case when pattern is uppercase
+set incsearch                     " show search results while typing
+set wrapscan                      " searches wrap around the end of the file
+set gdefault                      " substitute all occurrences in line per default
+set history=10000                 " keep x lines of command line history
+set scrolloff=5 sidescrolloff=10  " keep some lines before and after the cursor visible
+set clipboard=unnamedplus,unnamed,ideaput " integrate with system clipboard
+set idearefactormode=keep
+set notimeout                      " which key
+set timeoutlen=5000                " timeout for key sequences
+
+" https://github.com/JetBrains/ideavim/wiki/%22set%22-commands
+set multiple-cursors
+set commentary
+set surround                      " emulate vim-surround plugin
+set ideajoin
+set ideastatusicon=disabled
 set peekaboo
 set which-key
+set mini-ai
 
-let g:sneak#label = 1
-
-set nu
-set rnu
-set clipboard+=unnamed
-set clipboard+=ideaput
-set clipboard+=unnamedplus
-set ignorecase
-set smartcase
-set incsearch
-set hls
-set idearefactormode=keep
-set ideajoin
-" these 2 below are for which-key
-set notimeout
-set timeoutlen=5000
-
-sethandler ˙ a:vim
-sethandler ∆ a:vim
-sethandler ˚ a:vim
-sethandler ¬ a:vim
-sethandler <C-o> a:vim
-sethandler <C-i> a:vim
-
+" set <leader> to <space>
 let mapleader = " "
-nmap <BS> <leader>
+
 nmap <C-z> <Action>(ToggleDistractionFreeMode)
 inoremap <C-j><C-k> <Esc>
 vnoremap <C-j><C-k> <Esc>
 nnoremap <C-j><C-k> <Esc>
 nnoremap Y y$
-
-" use space for 2 leaders
-nmap <space> <leader><leader>
 
 nmap <C-w>c <Action>(CloseAllEditors)
 nmap <C-w>d <Action>(CloseAllEditorsButActive)
@@ -63,14 +60,12 @@ nmap [[ <Action>(MethodUp)
 nmap ]] <Action>(MethodDown)
 nmap <leader>fc <Action>(CollapseRegion)
 nmap <leader>fo <Action>(ExpandRegion)
-
 nmap <leader>la <Action>(Refactorings.QuickListPopupAction)
 nmap <Leader>lf <Action>(ReformatCode)
 xmap <Leader>lf <Action>(ReformatCode)
 nmap <leader>tf <Action>(GotoFile)
 nmap <leader>l] <Action>(GotoNextError)
 nmap <leader>l[ <Action>(GotoPreviousError)
-
 nmap <leader>tb <Action>(RecentFiles)
 nmap <leader>tf <Action>(com.mituuz.fuzzier.Fuzzier)
 nmap <leader>ts <Action>(com.mituuz.fuzzier.Fuzzier)
@@ -90,9 +85,10 @@ nmap <C-l> :noh<CR>
 nmap <C-b> :NERDTree<CR>
 nmap - <Action>(OpenNetrw)
 
-" LSP-ish
+" LSP Settings
 nmap gi <Action>(GotoImplementation)
 nmap gd <Action>(GotoDeclaration)
+nmap gr <Action>(GotoReference)
 nmap gp <Action>(GotoSuperMethod)
 nmap gt <Action>(GotoTest)
 nmap gb <Action>(Back)
@@ -103,7 +99,7 @@ nmap gh <Action>(QuickJavaDoc)
 nmap ge <Action>(ShowErrorDescription)
 nmap <leader>s <Action>(ActivateStructureToolWindow)
 
-" sneak
+" Vim Sneak
 xmap z <Plug>Sneak_z
 xmap Z <Plug>Sneak_Z
 map f <Plug>Sneak_f
@@ -111,12 +107,9 @@ map F <Plug>Sneak_F
 map t <Plug>Sneak_t
 map T <Plug>Sneak_T
 
-" VCS
-" map <leader>gg <Action>(LazyGit.Open)
-" nmap <leader>gg <Action>(ActivateCommitToolWindow)
-" nmap <leader>gb <Action>(ActivateVersionControlToolWindow)
-nmap <leader>gg <Action>(ActivateVersionControlToolWindow)
-nmap <leader>gB <Action>(Annotate)
+" Version Control System
+nmap <leader>gg <Action>(LazyGit.Open)
+" nmap <leader>gg <Action>(ActivateVersionControlToolWindow)
 nmap <leader>gu <Action>(Vcs.RollbackChangedLines)
 nmap <leader>gl <Action>(Vcs.UpdateProject)
 nmap <leader>gc <Action>(ActivateCommitToolWindow)
@@ -124,15 +117,27 @@ nmap <leader>gp <Action>(Vcs.Push)
 nmap <leader>ga <Action>(Vcs.Add)
 nmap <leader>g[ <Action>(VcsShowPrevChangeMarker)
 nmap <leader>g] <Action>(VcsShowNextChangeMarker)
-nmap <leader>go <Action>(Github.Open.In.Browser)
-vmap <leader>go <Action>(Github.Open.In.Browser)
-
+nmap <leader>gB <Action>(Github.Open.In.Browser)
+vmap <leader>gB <Action>(Github.Open.In.Browser)
 nmap <leader>cl <Action>(copilot.chat.show)
 vmap <leader>cl <Action>(copilot.chat.show)
-
 nmap <leader>pp <Action>($LRU)
-
 nmap <leader>zz <Action>(LocalHistory.ShowHistory)
-" nmap <leader>zp <Action>(RecentChanges)
 nmap <leader>zp <Action>(LocalHistory.ShowProjectHistory)
 vmap <leader>zz <Action>(LocalHistory.ShowSelectionHistory)
+
+" Remap multiple-cursors shortcuts to match terryma/vim-multiple-cursors
+nmap <C-n> <Plug>NextWholeOccurrence
+xmap <C-n> <Plug>NextWholeOccurrence
+nmap g<C-n> <Plug>NextOccurrence
+xmap g<C-n> <Plug>NextOccurrence
+xmap <C-x> <Plug>SkipOccurrence
+xmap <C-p> <Plug>RemoveOccurrence
+
+" Note that the default <A-n> and g<A-n> shortcuts don't work on Mac due to dead keys.
+" <A-n> is used to enter accented text e.g. ñ
+" Feel free to pick your own mappings that are not affected. I like to use <leader>
+nmap <leader><C-n> <Plug>AllWholeOccurrences
+xmap <leader><C-n> <Plug>AllWholeOccurrences
+nmap <leader>g<C-n> <Plug>AllOccurrences
+xmap <leader>g<C-n> <Plug>AllOccurrences
