@@ -47,7 +47,7 @@ if vim.g.vscode then
 
   -- Show whichkey using VSCode actions
   keymap({ "n", "x" }, "<leader><Space>", function()
-    vscode.action("whichkey.show")
+    vscode.action("workbench.action.quickOpen")
   end, opts)
 
   -- <space>gg to open lazygit in terminal

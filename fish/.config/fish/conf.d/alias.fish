@@ -11,5 +11,9 @@ alias pn pnpm
 alias k kubectl
 alias gs "git status"
 alias lg lazygit
+alias lzd lazydocker
 alias tmuxy tmuxifier
 alias cat "bat --paging=never"
+alias cd z
+alias grep "rg --color=auto"
+alias find fd
