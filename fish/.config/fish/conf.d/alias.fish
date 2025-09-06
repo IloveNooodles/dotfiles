@@ -17,3 +17,4 @@ alias cat "bat --paging=never"
 alias cd z
 alias grep "rg --color=auto"
 alias find fd
+alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
