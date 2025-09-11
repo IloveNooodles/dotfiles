@@ -27,9 +27,7 @@
       homebrew = {
         enable = true;
         onActivation = {
-          enable = true;
           autoUpdate = true;
-          update = true;
           upgrade = true;
         };
       };
@@ -47,10 +45,12 @@
         # Used for backwards compatibility, please read the changelog before changing.
         # $ darwin-rebuild changelog
         stateVersion = 6;
+
+        primaryUser = "rahman.muhammad";
       };
 
       # The platform the configuration will be used on.
-      nixpgs = {
+      nixpkgs = {
         hostPlatform = "aarch64-darwin";
         config.allowUnfree = true;
       };
@@ -67,7 +67,7 @@
           nix-homebrew = {
             enable = true;
             enableRosetta = true;
-            user = "gawrgare";
+            user = "rahman.muhammad";
             autoMigrate = true;
           };
         }
