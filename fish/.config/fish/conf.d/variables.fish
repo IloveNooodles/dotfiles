@@ -11,6 +11,7 @@ set -gx MANPATH /opt/homebrew/share/man $MANPATH
 set -q INFOPATH; or set INFOPATH ''
 set -gx INFOPATH /opt/homebrew/share/info $INFOPATH
 set -gx PATH $PATH $HOME/.krew/bin
+set -gx PATH "/nix/var/nix/profiles/default/bin:$PATH"
 
 set -x ZSH "$HOME/.oh-my-zsh"
 set -x PATH "~/Library/Python/3.9/bin:$PATH"
