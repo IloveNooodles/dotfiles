@@ -57,8 +57,6 @@
     };
   in
   {
-    # Build darwin flake using:
-    # $ darwin-rebuild build --flake .#simple
     darwinConfigurations."gawrgare" = nix-darwin.lib.darwinSystem {
       modules = [ 
         configuration
@@ -71,6 +69,7 @@
             autoMigrate = true;
           };
         }
+        mac-app-util.darwinModules.default
       ];
     };
 
