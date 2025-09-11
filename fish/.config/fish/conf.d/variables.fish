@@ -27,3 +27,8 @@ set -x PATH "$PATH:$GOROOT/bin"
 # tmuxifier
 set -x TMUXIFIER_NO_COMPLETE 1
 set -x EDITOR nvim
+
+# FZF
+set -Ux FZF_DEFAULT_COMMAND "fd --type f"
+set -Ux FZF_CTRL_T_COMMAND "fd --type f"
+set -Ux FZF_ALT_C_COMMAND "fd --type d"
