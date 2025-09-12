@@ -16,12 +16,36 @@
       # $ nix-env -qaP | grep wget
       environment.systemPackages =
         [
+          # Applications
           pkgs.wezterm
           pkgs.neovim
-          pkgs.tmux
-          pkgs.tmuxifier
+          pkgs.postman
+
           # Programming languages
           pkgs.ansible
+
+          # Utilization
+
+          # Rust linux tools
+          pkgs.bat
+          pkgs.eza
+          pkgs.fzf
+          pkgs.ripgrep
+          pkgs.fd
+
+          # Tools
+          pkgs.awscli2
+          pkgs.direnv
+          pkgs.ffmpeg
+          pkgs.gitleaks
+          pkgs.stow
+          pkgs.lazygit
+          pkgs.lazydocker
+          pkgs.kubectl
+          pkgs.k9s
+          pkgs.mise
+          pkgs.tmux
+          pkgs.tmuxifier
         ];
 
       homebrew = {
@@ -30,6 +54,15 @@
           autoUpdate = true;
           upgrade = true;
         };
+
+        brews = [
+          "circleci"
+          "helm"
+        ];
+
+        casks = [
+          "snipaste"
+        ];
       };
 
       # Necessary for using flakes on this system.
