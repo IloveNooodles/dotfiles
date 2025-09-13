@@ -7,14 +7,125 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     mac-app-util.url = "github:hraban/mac-app-util";
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
+    rust-overlay.url = "github:oxalica/rust-overlay";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, mac-app-util, nix-homebrew, ... }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, mac-app-util, nix-homebrew, rust-overlay, ... }:
   let
     configuration = { pkgs, config, ... }: {
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
       environment.systemPackages =
+        let
+          vscode = pkgs.vscode-with-extensions.override {
+            vscodeExtensions = with pkgs.vscode-extensions; [
+              aaron-bond.better-comments
+              adpyke.codesnap
+              alefragnani.project-manager
+              apollographql.vscode-apollo
+              asvetliakov.vscode-neovim
+              batisteo.vscode-django
+              bmewburn.vscode-intelephense-client
+              bradlc.vscode-tailwindcss
+              christian-kohler.path-intellisense
+              dart-code.dart-code
+              dart-code.flutter
+              dbaeumer.vscode-eslint
+              donjayamanne.githistory
+              eamodio.gitlens
+              ecmel.vscode-html-css
+              esbenp.prettier-vscode
+              firsttris.vscode-jest-runner
+              formulahendry.auto-close-tag
+              formulahendry.auto-rename-tag
+              formulahendry.code-runner
+              github.vscode-github-actions
+              golang.go
+              graphql.vscode-graphql
+              graphql.vscode-graphql-syntax
+              gruntfuggly.todo-tree
+              hashicorp.terraform
+              james-yu.latex-workshop
+              justusadam.language-haskell
+              kamikillerto.vscode-colorize
+              mechatroner.rainbow-csv
+              mhutchie.git-graph
+              ms-azuretools.vscode-docker
+              ms-kubernetes-tools.vscode-kubernetes-tools
+              ms-python.debugpy
+              ms-python.isort
+              ms-python.python
+              ms-python.vscode-pylance
+              ms-vscode-remote.remote-containers
+              ms-vscode-remote.remote-ssh
+              ms-vscode-remote.remote-ssh-edit
+              ms-vscode-remote.remote-wsl
+              ms-vscode-remote.vscode-remote-extensionpack
+              ms-vscode.cmake-tools
+              ms-vscode.cpptools
+              ms-vscode.cpptools-extension-pack
+              ms-vscode.hexeditor
+              ms-vscode.makefile-tools
+              ms-vscode.remote-explorer
+              ms-vsliveshare.vsliveshare
+              njpwerner.autodocstring
+              octref.vetur
+              oderwat.indent-rainbow
+              pkief.material-icon-theme
+              redhat.java
+              redhat.vscode-yaml
+              ritwickdey.liveserver
+              rust-lang.rust-analyzer
+              shopify.ruby-lsp
+              svelte.svelte-vscode
+              twxs.cmake
+              unifiedjs.vscode-mdx
+              usernamehw.errorlens
+              visualstudioexptteam.intellicode-api-usage-examples
+              visualstudioexptteam.vscodeintellicode
+              vscjava.vscode-gradle
+              vscjava.vscode-java-debug
+              vscjava.vscode-java-pack
+              vscjava.vscode-java-test
+              vspacecode.whichkey
+              vue.volar
+              wholroyd.jinja
+              xdebug.php-debug
+              yoavbls.pretty-ts-errors
+              yzhang.markdown-all-in-one
+              zainchen.json
+              ziglang.vscode-zig
+              zxh404.vscode-proto3
+              # FIXME
+              # 13xforever.language-x86-64-assembly
+              # 4ops.terraform
+              # ahmadalli.vscode-nginx-conf
+              # antfu.unocss
+              # anthropic.claude-code
+              # circleci.circleci
+              # cschlosser.doxdocgen
+              # donjayamanne.python-extension-pack
+              # equinusocio.vsc-material-theme
+              # janisdd.vscode-edit-csv
+              # jeff-hykin.better-cpp-syntax
+              # kevinrose.vsc-python-indent
+              # mgmcdermott.vscode-language-babel
+              # mquandalle.graphql
+              # mrmlnc.vscode-autoprefixer
+              # mrmlnc.vscode-scss
+              # ms-python.autopep8
+              # ms-vscode.cpptools-themes
+              # ms-vscode.remote-server
+              # ms-vscode.vscode-typescript-next
+              # orta.vscode-twoslash-queries
+              # shopify.ruby-extensions-pack
+              # sibiraj-s.vscode-scss-formatter
+              # tobias-z.vscode-harpoon
+              # xabikos.javascriptsnippets
+              # zignd.html-css-class-completion
+            ];
+          };
+        in
         [
           # Applications
           pkgs.wezterm
@@ -24,6 +135,13 @@
 
           # Programming languages
           pkgs.ansible
+          pkgs.gcc
+          pkgs.elixir
+          pkgs.lua
+          pkgs.bun
+          pkgs.zig
+          pkgs.go
+          pkgs.rust-bin.stable.latest.default
 
           # Utilization
           # pkgs.obs-studio
@@ -34,6 +152,7 @@
           pkgs.fzf
           pkgs.ripgrep
           pkgs.fd
+          pkgs.zoxide
 
           # Tools
           pkgs.awscli2
@@ -48,116 +167,12 @@
           pkgs.mise
           pkgs.tmux
           pkgs.tmuxifier
-          pkgs.vscode
-
-          # VSCode plugins
+          pkgs.starship
+          pkgs.tailscale
+          pkgs.talosctl
+          pkgs.pre-commit
+          vscode
         ];
-
-      # extensions = with pkgs.vscode-extensions; [
-      #   13xforever.language-x86-64-assembly
-      #   4ops.terraform
-      #   aaron-bond.better-comments
-      #   adpyke.codesnap
-      #   ahmadalli.vscode-nginx-conf
-      #   alefragnani.project-manager
-      #   antfu.unocss
-      #   anthropic.claude-code
-      #   apollographql.vscode-apollo
-      #   asvetliakov.vscode-neovim
-      #   batisteo.vscode-django
-      #   bmewburn.vscode-intelephense-client
-      #   bradlc.vscode-tailwindcss
-      #   christian-kohler.path-intellisense
-      #   circleci.circleci
-      #   cschlosser.doxdocgen
-      #   dart-code.dart-code
-      #   dart-code.flutter
-      #   dbaeumer.vscode-eslint
-      #   donjayamanne.githistory
-      #   donjayamanne.python-extension-pack
-      #   eamodio.gitlens
-      #   ecmel.vscode-html-css
-      #   equinusocio.vsc-material-theme
-      #   esbenp.prettier-vscode
-      #   firsttris.vscode-jest-runner
-      #   formulahendry.auto-close-tag
-      #   formulahendry.auto-rename-tag
-      #   formulahendry.code-runner
-      #   github.vscode-github-actions
-      #   golang.go
-      #   graphql.vscode-graphql
-      #   graphql.vscode-graphql-syntax
-      #   gruntfuggly.todo-tree
-      #   hashicorp.terraform
-      #   james-yu.latex-workshop
-      #   janisdd.vscode-edit-csv
-      #   jeff-hykin.better-cpp-syntax
-      #   justusadam.language-haskell
-      #   kamikillerto.vscode-colorize
-      #   kevinrose.vsc-python-indent
-      #   mechatroner.rainbow-csv
-      #   mgmcdermott.vscode-language-babel
-      #   mhutchie.git-graph
-      #   mquandalle.graphql
-      #   mrmlnc.vscode-autoprefixer
-      #   mrmlnc.vscode-scss
-      #   ms-azuretools.vscode-docker
-      #   ms-kubernetes-tools.vscode-kubernetes-tools
-      #   ms-python.autopep8
-      #   ms-python.debugpy
-      #   ms-python.isort
-      #   ms-python.python
-      #   ms-python.vscode-pylance
-      #   ms-vscode-remote.remote-containers
-      #   ms-vscode-remote.remote-ssh
-      #   ms-vscode-remote.remote-ssh-edit
-      #   ms-vscode-remote.remote-wsl
-      #   ms-vscode-remote.vscode-remote-extensionpack
-      #   ms-vscode.cmake-tools
-      #   ms-vscode.cpptools
-      #   ms-vscode.cpptools-extension-pack
-      #   ms-vscode.cpptools-themes
-      #   ms-vscode.hexeditor
-      #   ms-vscode.makefile-tools
-      #   ms-vscode.remote-explorer
-      #   ms-vscode.remote-server
-      #   ms-vscode.vscode-typescript-next
-      #   ms-vsliveshare.vsliveshare
-      #   njpwerner.autodocstring
-      #   octref.vetur
-      #   oderwat.indent-rainbow
-      #   orta.vscode-twoslash-queries
-      #   pkief.material-icon-theme
-      #   redhat.java
-      #   redhat.vscode-yaml
-      #   ritwickdey.liveserver
-      #   rust-lang.rust-analyzer
-      #   shopify.ruby-extensions-pack
-      #   shopify.ruby-lsp
-      #   sibiraj-s.vscode-scss-formatter
-      #   svelte.svelte-vscode
-      #   tobias-z.vscode-harpoon
-      #   twxs.cmake
-      #   unifiedjs.vscode-mdx
-      #   usernamehw.errorlens
-      #   visualstudioexptteam.intellicode-api-usage-examples
-      #   visualstudioexptteam.vscodeintellicode
-      #   vscjava.vscode-gradle
-      #   vscjava.vscode-java-debug
-      #   vscjava.vscode-java-pack
-      #   vscjava.vscode-java-test
-      #   vspacecode.whichkey
-      #   vue.volar
-      #   wholroyd.jinja
-      #   xabikos.javascriptsnippets
-      #   xdebug.php-debug
-      #   yoavbls.pretty-ts-errors
-      #   yzhang.markdown-all-in-one
-      #   zainchen.json
-      #   ziglang.vscode-zig
-      #   zignd.html-css-class-completion
-      #   zxh404.vscode-proto3
-      # ];
 
       homebrew = {
         enable = true;
@@ -172,6 +187,7 @@
         ];
 
         casks = [
+          "dbeaver-community"
           "snipaste"
           "outerbase-studio"
           "orbstack"
@@ -185,7 +201,9 @@
       nix.settings.experimental-features = "nix-command flakes";
 
       # Enable alternative shell support in nix-darwin.
-      programs.fish.enable = true;
+      programs = {
+        fish.enable = true;
+      };
 
       system = {
         # Set Git commit hash for darwin-version.
@@ -201,6 +219,7 @@
       # The platform the configuration will be used on.
       nixpkgs = {
         hostPlatform = "aarch64-darwin";
+        overlays = [ rust-overlay.overlays.default ];
         config.allowUnfree = true;
       };
     };
