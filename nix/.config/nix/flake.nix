@@ -107,5 +107,21 @@
     };
 
     darwinPackages = self.darwinConfigurations."gawrgare".pkgs;
+  
+    darwinConfigurations."gawrgare-home" = nix-darwin.lib.darwinSystem {
+      modules = [ 
+        configuration
+        nix-homebrew.darwinModules.nix-homebrew
+        {
+          nix-homebrew = {
+            enable = true;
+            enableRosetta = true;
+            user = "gawrgare";
+            autoMigrate = true;
+          };
+        }
+        mac-app-util.darwinModules.default
+      ];
+    };
   };
 }

@@ -1,0 +1,21 @@
+# https://taskfile.dev
+
+version: "3"
+
+vars:
+  GREETING: Hello, World!
+
+tasks:
+  rebuild-nix:
+    cmds:
+      - sudo darwin-rebuild -- switch
+  install-nix:
+    env:
+      FLAKE_DIR: ./nix/.config/nix
+      FLAKE_CONFIG: gawrgare-home
+    cmds:
+      - sudo nix run nix-darwin/master#darwin-rebuild -- switch --flake $FLAKE_DIR#$FLAKE_CONFIG
+  default:
+    cmds:
+      - echo "{{.GREETING}}"
+    silent: true
