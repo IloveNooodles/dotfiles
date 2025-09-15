@@ -168,7 +168,6 @@
           pkgs.tmux
           pkgs.tmuxifier
           pkgs.starship
-          pkgs.tailscale
           pkgs.talosctl
           pkgs.pre-commit
           vscode
@@ -194,7 +193,12 @@
           "cursor"
           "kindavim"
           "keycastr"
+          "tailscale-app"
         ];
+
+        masApps = {
+          "RunCat" = 1429033973;
+        };
       };
 
       # Necessary for using flakes on this system.
