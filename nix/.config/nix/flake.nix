@@ -156,6 +156,7 @@
 
           # Tools
           pkgs.awscli2
+          pkgs.terraform
           pkgs.direnv
           pkgs.ffmpeg
           pkgs.gitleaks
@@ -198,6 +199,7 @@
 
         masApps = {
           "RunCat" = 1429033973;
+          "Bitwarden" = 1352778147; 
         };
       };
 
