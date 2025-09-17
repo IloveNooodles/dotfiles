@@ -171,7 +171,11 @@
           pkgs.starship
           pkgs.talosctl
           pkgs.pre-commit
+          pkgs.go-task
           vscode
+
+          # Dependencies
+          pkgs.libyaml
         ];
 
       homebrew = {
