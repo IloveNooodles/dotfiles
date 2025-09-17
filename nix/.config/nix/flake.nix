@@ -188,6 +188,7 @@
         brews = [
           "circleci"
           "helm"
+          "libyaml"
         ];
 
         casks = [
