@@ -21,16 +21,16 @@ sketchybar --bar position=top height=40 blur_radius=30 color=0x40000000
 # https://felixkratz.github.io/SketchyBar/config/items
 
 default=(
-  padding_left=5
-  padding_right=5
-  icon.font="Hack Nerd Font:Regular:15.0"
-  label.font="Hack Nerd Font:Regular:12.0"
+  padding_left=3
+  padding_right=3
+  icon.font="Hack Nerd Font:Regular:12.0"
+  label.font="Hack Nerd Font:Regular:11.0"
   icon.color=$WHITE
   label.color=$WHITE
-  icon.padding_left=10
+  icon.padding_left=6
   icon.padding_right=0
-  label.padding_left=10
-  label.padding_right=10
+  label.padding_left=6
+  label.padding_right=6
   background.corner_radius=5
   background.height=24
 )
@@ -54,9 +54,14 @@ for sid in $(aerospace list-workspaces --all); do
         --set space.$sid \
         background.color=0x44ffffff \
         background.corner_radius=5 \
-        background.height=20 \
+        background.height=18 \
         background.drawing=off \
         label="$sid" \
+        label.font="Hack Nerd Font:Regular:10.0" \
+        label.padding_left=4 \
+        label.padding_right=4 \
+        padding_left=2 \
+        padding_right=2 \
         click_script="aerospace workspace $sid" \
         script="$CONFIG_DIR/plugins/aerospace.sh $sid"
 done
@@ -68,7 +73,7 @@ sketchybar --add item music left \
              script="$PLUGIN_DIR/music.sh" \
              icon= \
              label.padding_left=0 \
-             icon.padding_right=8 \
+             icon.padding_right=4 \
              label.color=0xffa6e3a1 \
              icon.color=0xffa6e3a1 \
              click_script="open -a Spotify" \
@@ -90,7 +95,7 @@ sketchybar \
       icon= \
       update_freq=300 \
       label.padding_left=0 \
-      icon.padding_right=8 \
+      icon.padding_right=4 \
       label.color=$WHITE \
       icon.color=$WHITE \
       click_script="open -a Weather" \
