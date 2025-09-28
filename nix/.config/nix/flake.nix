@@ -232,7 +232,7 @@
         # $ darwin-rebuild changelog
         stateVersion = 6;
 
-        primaryUser = "gawrgare";
+        primaryUser = "rahman.muhammad";
       };
 
       # The platform the configuration will be used on.
