@@ -13,7 +13,7 @@ PLUGIN_DIR="$CONFIG_DIR/plugins"
 # If you are looking for other colors, see the color picker:
 # https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
 
-sketchybar --bar position=top height=40 blur_radius=30 color=0x40000000
+sketchybar --bar position=top height=40 blur_radius=30 color=0x40$BAR_COLOR
 
 ##### Changing Defaults #####
 # We now change some default values, which are applied to all further items.
@@ -52,12 +52,14 @@ for sid in $(aerospace list-workspaces --all); do
     sketchybar --add item space.$sid left \
         --subscribe space.$sid aerospace_workspace_change \
         --set space.$sid \
-        background.color=0x44ffffff \
+        background.color=0x44$ACCENT_COLOR \
         background.corner_radius=5 \
         background.height=18 \
         background.drawing=off \
         label="$sid" \
         label.font="Hack Nerd Font:Regular:10.0" \
+        background.drawing=on \
+        background.color=0x44$ACCENT_COLOR \
         label.padding_left=4 \
         label.padding_right=4 \
         padding_left=2 \
@@ -74,8 +76,10 @@ sketchybar --add item music left \
              icon= \
              label.padding_left=0 \
              icon.padding_right=4 \
-             label.color=0xffa6e3a1 \
-             icon.color=0xffa6e3a1 \
+             background.drawing=on \
+             background.color=0x44$GREEN \
+             background.corner_radius=5 \
+             background.height=20 \
              click_script="open -a Spotify" \
              update_freq=2 \
              drawing=on \    # start hidden
@@ -86,8 +90,14 @@ sketchybar \
   --add item clock right \
     --set clock \
       update_freq=10 \
-      icon=📅 \
+      icon=📆 \
       script="$PLUGIN_DIR/clock.sh" \
+      label.padding_left=0 \
+      icon.padding_right=4 \
+      background.drawing=on \
+      background.color=0x44$BLUE \
+      background.corner_radius=5 \
+      background.height=20 \
   \
   --add item weather right \
     --set weather \
@@ -96,8 +106,10 @@ sketchybar \
       update_freq=300 \
       label.padding_left=0 \
       icon.padding_right=4 \
-      label.color=$WHITE \
-      icon.color=$WHITE \
+      background.drawing=on \
+      background.color=0x44$CYAN \
+      background.corner_radius=5 \
+      background.height=20 \
       click_script="open -a Weather" \
       drawing=on \
   \
@@ -121,15 +133,20 @@ sketchybar \
      update_freq=3 \
      label.padding_left=0 \
      icon.padding_right=8 \
-    label.color=0xfff2cdcd \
-    icon.color=0xfff2cdcd \
+    background.drawing=on \
+    background.color=0x44$PINK \
+    background.corner_radius=5 \
+    background.height=20 \
   \
   --add graph cpu_usage right 50 \
      --set cpu_usage script="$PLUGIN_DIR/cpu_usage.sh" \
       update_freq=5 \
-      label.color=0xffcba6f7 \
-      graph.color=0xffcba6f7 \
-      graph.fill_color=0x55cba6f7 \
+      background.drawing=on \
+      background.color=0x44$PURPLE \
+      background.corner_radius=5 \
+      background.height=20 \
+      graph.color=$PURPLE \
+      graph.fill_color=0x55$PURPLE \
       graph.line_width=2 \
       icon.drawing=off
 
