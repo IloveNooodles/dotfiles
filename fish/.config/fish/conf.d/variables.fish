@@ -15,10 +15,10 @@ set -gx PATH "/nix/var/nix/profiles/default/bin:$PATH"
 set -gx PATH "/run/current-system/sw/bin:$PATH"
 
 set -x ZSH "$HOME/.oh-my-zsh"
-set -x PATH "~/Library/Python/3.9/bin:$PATH"
+# set -x PATH "~/Library/Python/3.9/bin:$PATH"
 set -x PATH "$PATH:/usr/bin"
 set -x PATH "$HOME/.tmuxifier/bin:$PATH"
-set -x PATH "/opt/homebrew/opt/ruby/bin:$PATH"
+# set -x PATH "/opt/homebrew/opt/ruby/bin:$PATH"
 
 # Go
 set -x GOPATH "$HOME/go"

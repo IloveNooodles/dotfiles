@@ -185,10 +185,16 @@
           upgrade = true;
         };
 
+        taps = [
+          "FelixKratz/formulae"
+          "nikitabobko/tap"
+        ];
+
         brews = [
           "circleci"
           "helm"
           "libyaml"
+          "sketchybar"
         ];
 
         casks = [
@@ -200,6 +206,8 @@
           "kindavim"
           "keycastr"
           "tailscale-app"
+          "aerospace"
+          "font-hack-nerd-font"
         ];
 
         masApps = {
