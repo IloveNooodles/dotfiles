@@ -60,6 +60,15 @@ return {
     scroll = { enabled = true },
     statuscolumn = { enabled = true },
     words = { enabled = true },
+    terminal = {
+      win = {
+        position = "float",
+        width = 0.8,
+        height = 0.8,
+        border = "rounded",
+        wo = { number = false, relativenumber = false, signcolumn = "no" },
+      },
+    },
     lazygit = {
       enabled = true,
     },
