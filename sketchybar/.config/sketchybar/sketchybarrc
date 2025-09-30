@@ -67,6 +67,10 @@ for sid in $(aerospace list-workspaces --all); do
         label.font="Hack Nerd Font:Bold:10.0" \
         label.padding_left=4 \
         label.padding_right=4 \
+        icon.padding_left=0 \
+        icon.padding_right=0 \
+        padding_left=0 \
+        padding_right=0 \
         padding_left=0 \
         padding_right=0 \
         click_script="aerospace workspace $sid" \
