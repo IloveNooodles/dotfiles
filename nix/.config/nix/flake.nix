@@ -195,6 +195,7 @@
           "helm"
           "libyaml"
           "sketchybar"
+          "uv"
         ];
 
         casks = [
