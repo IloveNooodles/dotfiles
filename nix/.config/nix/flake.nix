@@ -209,6 +209,7 @@
           "tailscale-app"
           "aerospace"
           "font-hack-nerd-font"
+          "headlamp"
         ];
 
         masApps = {
