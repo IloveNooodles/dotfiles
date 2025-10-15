@@ -21,10 +21,10 @@ set -x PATH "$HOME/.tmuxifier/bin:$PATH"
 # set -x PATH "/opt/homebrew/opt/ruby/bin:$PATH"
 
 # Go
-set -x GOPATH "$HOME/go"
-set -x GOROOT "$(brew --prefix golang)/libexec"
-set -x PATH "$PATH:$GOPATH/bin"
-set -x PATH "$PATH:$GOROOT/bin"
+# set -x GOPATH "$HOME/go"
+# set -x GOROOT "$(brew --prefix golang)/libexec"
+# set -x PATH "$PATH:$GOPATH/bin"
+# set -x PATH "$PATH:$GOROOT/bin"
 
 # tmuxifier
 set -x TMUXIFIER_NO_COMPLETE 1
