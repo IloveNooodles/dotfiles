@@ -196,6 +196,7 @@
           "libyaml"
           "sketchybar"
           "uv"
+          "bruno"
         ];
 
         casks = [
