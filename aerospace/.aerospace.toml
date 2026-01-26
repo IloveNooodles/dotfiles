@@ -155,8 +155,9 @@ alt-tab = 'workspace-back-and-forth'
 alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
-alt-shift-semicolon = 'mode service'
-alt-shift-enter = 'mode apps'
+alt-shift-s = 'mode service'
+alt-shift-a = 'mode apps'
+alt-shift-m = 'mode main'
 
 alt-f = "macos-native-fullscreen"
 alt-m = "macos-native-minimize"
@@ -176,6 +177,7 @@ alt-shift-h = ['join-with left', 'mode main']
 alt-shift-j = ['join-with down', 'mode main']
 alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
+alt-shift-m = 'mode main'
 
 down = 'volume down'
 up = 'volume up'
@@ -188,4 +190,8 @@ alt-o = [
   'exec-and-forget open -a /Applications/Nix Apps/Obsidian.app',
   'mode main',
 ]
+alt-n = ['exec-and-forget open -a /Applications/Notion.app', 'mode main']
 alt-c = ['exec-and-forget open -a /Applications/Cursor.app', 'mode main']
+alt-s = ['exec-and-forget open -a /Applications/Slack.app', 'mode main']
+alt-m = ['exec-and-forget open -a /Applications/Spotify.app', 'mode main']
+alt-shift-m = 'mode main'
