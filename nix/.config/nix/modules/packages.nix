@@ -138,6 +138,7 @@
       pkgs.ripgrep
       pkgs.fd
       pkgs.zoxide
+      pkgs.just
 
       # Tools (from stable)
       pkgs.awscli2
@@ -159,6 +160,11 @@
       pkgs.go-task
       pkgs.ast-grep
       pkgs.nil
+      pkgs.asciinema
+      pkgs.croc
+      pkgs.ttyd
+      pkgs.jrnl
+      pkgs.newsboat
       vscode
 
       # Dependencies
