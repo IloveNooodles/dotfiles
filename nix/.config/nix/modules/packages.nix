@@ -167,6 +167,7 @@
       pkgs.newsboat
       pkgs.gnuplot
       pkgs.graphviz
+      pkgs.coursier
       vscode
 
       # Dependencies
