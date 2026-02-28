@@ -78,6 +78,16 @@ return {
     scope = {
       enabled = true,
     },
+    picker = {
+      enabled = true,
+      sources = {
+        files = { hidden = true },
+        explorer = { hidden = true },
+      },
+    },
+    editor = {
+      enabled = true,
+    },
     styles = {
       notification = {
         relative = "editor", -- Relative to the editor

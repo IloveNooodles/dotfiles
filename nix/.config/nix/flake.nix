@@ -172,6 +172,8 @@
           pkgs.talosctl
           pkgs.pre-commit
           pkgs.go-task
+          pkgs.ast-grep
+          pkgs.nil
           vscode
 
           # Dependencies

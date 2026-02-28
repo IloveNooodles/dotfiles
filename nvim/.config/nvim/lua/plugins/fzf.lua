@@ -2,6 +2,7 @@ local actions = require("fzf-lua.actions")
 
 return {
   "ibhagwan/fzf-lua",
+  enable = false,
   cmd = "FzfLua",
   opts = {
     "default-title",
