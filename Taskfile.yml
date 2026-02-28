@@ -4,7 +4,7 @@ version: "3"
 
 vars:
   GREETING: Hello, World!
-  FLAKE_DIR: ./nix/.config/nix
+  FLAKE_DIR: ~/dotfiles/nix/.config/nix
   FLAKE_CONFIG: gawrgare-home
 
 tasks:
