@@ -18,7 +18,6 @@
       "libyaml"
       "sketchybar"
       "uv"
-      "bruno"
     ];
 
     casks = [
@@ -33,6 +32,7 @@
       "aerospace"
       "font-hack-nerd-font"
       "headlamp"
+      "bruno"
     ];
 
     masApps = {
