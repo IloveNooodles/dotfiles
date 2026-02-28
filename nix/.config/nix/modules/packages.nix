@@ -165,6 +165,8 @@
       pkgs.ttyd
       pkgs.jrnl
       pkgs.newsboat
+      pkgs.gnuplot
+      pkgs.graphviz
       vscode
 
       # Dependencies
