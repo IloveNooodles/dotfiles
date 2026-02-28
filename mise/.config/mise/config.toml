@@ -1,7 +1,7 @@
 [tools]
 node = "24"
 ruby = "3.3.10"
-java = "corretto-24"
+java = "corretto-25"
 
 [settings]
 idiomatic_version_file_enable_tools = ["ruby"]
