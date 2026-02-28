@@ -2,6 +2,30 @@ return {
   "saghen/blink.cmp",
   enable = true,
   opts = {
+    completion = {
+      accept = {
+        -- experimental auto-brackets support
+        auto_brackets = {
+          enabled = true,
+        },
+      },
+      menu = {
+        border = "single",
+        draw = {
+          columns = {
+            { "label", "label_description", gap = 1 },
+            { "kind_icon", "kind", gap = 1 },
+          },
+        },
+      },
+      documentation = {
+        auto_show = true,
+        auto_show_delay_ms = 200,
+      },
+      ghost_text = {
+        enabled = vim.g.ai_cmp,
+      },
+    },
     sources = {
       default = {
         "lsp",
