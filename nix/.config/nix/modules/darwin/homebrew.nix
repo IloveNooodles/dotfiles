@@ -10,6 +10,7 @@
     taps = [
       "FelixKratz/formulae"
       "nikitabobko/tap"
+      "datadog-labs/pack"
     ];
 
     brews = [
@@ -19,6 +20,7 @@
       "sketchybar"
       "uv"
       "telepresenceio/telepresence/telepresence-oss"
+      "datadog-labs/pack/pup"
     ];
 
     casks = [
