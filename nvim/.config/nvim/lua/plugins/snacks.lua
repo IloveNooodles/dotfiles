@@ -79,6 +79,8 @@ return {
       enabled = true,
     },
     picker = {
+      layout = "ivy",
+      border = "rounded",
       enabled = true,
       sources = {
         files = { hidden = true },

@@ -18,6 +18,7 @@
       "libyaml"
       "sketchybar"
       "uv"
+      "telepresenceio/telepresence/telepresence-oss"
     ];
 
     casks = [
