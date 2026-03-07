@@ -139,6 +139,7 @@
       pkgs.fd
       pkgs.zoxide
       pkgs.just
+      pkgs.delta
 
       # Tools (from stable)
       pkgs.awscli2
@@ -168,6 +169,8 @@
       pkgs.gnuplot
       pkgs.graphviz
       pkgs.coursier
+      pkgs.gh
+      pkgs.rust-analyzer
       vscode
 
       # Dependencies
