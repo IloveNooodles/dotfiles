@@ -4,7 +4,6 @@ return {
   opts = {
     completion = {
       accept = {
-        -- experimental auto-brackets support
         auto_brackets = {
           enabled = true,
         },
@@ -24,6 +23,12 @@ return {
       },
       ghost_text = {
         enabled = vim.g.ai_cmp,
+      },
+      list = {
+        selection = {
+          preselect = true,
+          auto_insert = true,
+        },
       },
     },
     sources = {
