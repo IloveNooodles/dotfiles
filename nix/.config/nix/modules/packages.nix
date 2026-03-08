@@ -157,7 +157,6 @@
       pkgs.tmuxifier
       pkgs.starship
       pkgs.talosctl
-      pkgs.pre-commit
       pkgs.go-task
       pkgs.ast-grep
       pkgs.nil
@@ -171,6 +170,7 @@
       pkgs.coursier
       pkgs.gh
       pkgs.rust-analyzer
+      pkgs.prek
       vscode
 
       # Dependencies
