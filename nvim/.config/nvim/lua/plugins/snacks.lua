@@ -83,8 +83,16 @@ return {
       border = "rounded",
       enabled = true,
       sources = {
-        files = { hidden = true },
-        explorer = { hidden = true },
+        files = {
+          hidden = true,
+          ignored = true,
+          exclude = { "node_modules", "dist", "build", ".git" },
+        },
+        explorer = {
+          hidden = true,
+          ignored = true,
+          exclude = { "node_modules", "dist", "build", ".git" },
+        },
         grep = {
           args = {
             "--ignore-case",
