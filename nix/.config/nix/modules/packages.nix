@@ -141,7 +141,7 @@
       # Tools (from stable)
       pkgs.awscli2
       pkgs.terraform
-      pkgs.direnv
+      pkgs-unstable.direnv
       pkgs.ffmpeg
       pkgs.gitleaks
       pkgs.stow
@@ -149,7 +149,7 @@
       pkgs.lazydocker
       pkgs.kubectl
       pkgs.k9s
-      pkgs.mise
+      pkgs-unstable.mise
       pkgs.tmux
       pkgs.tmuxifier
       pkgs.starship
