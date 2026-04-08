@@ -141,7 +141,7 @@
       # Tools (from stable)
       pkgs.awscli2
       pkgs.terraform
-      pkgs.direnv
+      pkgs-unstable.direnv
       pkgs.ffmpeg
       pkgs.gitleaks
       pkgs.stow
