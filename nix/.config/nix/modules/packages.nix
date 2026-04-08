@@ -113,20 +113,17 @@
       };
     in
     [
-      # Applications (from stable)
-      pkgs.wezterm
-      pkgs.neovim
-      pkgs.postman
-      pkgs.obsidian
+      # Applications
+      pkgs-unstable.wezterm
+      pkgs-unstable.neovim
+      pkgs-unstable.obsidian
 
-      # Programming languages (from stable)
-      pkgs.ansible
-      pkgs.gcc
-      pkgs.elixir
-      pkgs.lua
-      pkgs.go
-      
       # Programming languages (from unstable for latest versions)
+      pkgs-unstable.ansible
+      pkgs-unstable.gcc
+      pkgs-unstable.elixir
+      pkgs-unstable.lua
+      pkgs-unstable.go
       pkgs-unstable.bun
       pkgs-unstable.zig
       pkgs-unstable.rust-bin.stable.latest.default
