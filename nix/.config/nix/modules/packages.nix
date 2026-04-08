@@ -116,7 +116,7 @@
       # Applications
       pkgs-unstable.wezterm
       pkgs-unstable.neovim
-      pkgs-unstable.obsidian
+      pkgs.obsidian
 
       # Programming languages (from unstable for latest versions)
       pkgs-unstable.ansible
