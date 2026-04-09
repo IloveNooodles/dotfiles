@@ -21,6 +21,7 @@
       "uv"
       "telepresenceio/telepresence/telepresence-oss"
       "datadog-labs/pack/pup"
+      "fish"
     ];
 
     casks = [
