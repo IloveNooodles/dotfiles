@@ -117,7 +117,6 @@
       pkgs-unstable.wezterm
       pkgs-unstable.neovim
       pkgs.obsidian
-      pkgs-unstable.fish
 
       # Programming languages (from unstable for latest versions)
       pkgs-unstable.ansible
