@@ -166,6 +166,7 @@
       pkgs.graphviz
       pkgs.coursier
       pkgs.gh
+      pkgs.github-copilot-cli
       pkgs.rust-analyzer
       pkgs.prek
       pkgs.tree-sitter

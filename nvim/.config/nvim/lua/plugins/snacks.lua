@@ -94,6 +94,8 @@ return {
           exclude = { "node_modules", "dist", "build", ".git" },
         },
         grep = {
+          hidden = true,
+          ignored = true,
           args = {
             "--ignore-case",
           },
