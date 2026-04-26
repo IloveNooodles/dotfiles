@@ -22,6 +22,7 @@
       "telepresenceio/telepresence/telepresence-oss"
       "datadog-labs/pack/pup"
       "fish"
+      "worktrunk"
     ];
 
     casks = [
