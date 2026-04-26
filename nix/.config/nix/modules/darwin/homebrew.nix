@@ -23,6 +23,7 @@
       "datadog-labs/pack/pup"
       "fish"
       "worktrunk"
+      "reattach-to-user-namespace"
     ];
 
     casks = [

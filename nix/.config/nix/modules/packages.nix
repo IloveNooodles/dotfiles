@@ -170,6 +170,7 @@
       pkgs.prek
       pkgs.tree-sitter
       pkgs.opencode
+      pkgs.gemini-cli
       vscode
 
       # Dependencies
