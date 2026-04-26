@@ -169,6 +169,7 @@
       pkgs.rust-analyzer
       pkgs.prek
       pkgs.tree-sitter
+      pkgs.opencode
       vscode
 
       # Dependencies
