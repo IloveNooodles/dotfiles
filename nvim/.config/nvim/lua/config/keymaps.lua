@@ -81,6 +81,14 @@ if vim.g.vscode then
     opts
   )
 
+  -- git browse
+  keymap({ "n", "v" }, "<leader>gB", function()
+    vscode.action("gitlens.openFileOnRemote")
+  end, opts)
+  keymap({ "n", "v" }, "<leader>gb", function()
+    vscode.action("gitlens.toggleFileBlame")
+  end, opts)
+
   -- folding
   keymap("n", "za", "<cmd>lua require('vscode').action('editor.toggleFold')<CR>", opts)
   keymap("n", "zM", "<cmd>lua require('vscode').action('editor.foldAll')<CR>", opts)
