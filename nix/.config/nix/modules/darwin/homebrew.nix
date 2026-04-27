@@ -24,6 +24,7 @@
       "fish"
       "worktrunk"
       "reattach-to-user-namespace"
+      "direnv"
     ];
 
     casks = [
