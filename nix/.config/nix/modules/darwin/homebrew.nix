@@ -25,6 +25,7 @@
       "worktrunk"
       "reattach-to-user-namespace"
       "direnv"
+      "rtk"
     ];
 
     casks = [
