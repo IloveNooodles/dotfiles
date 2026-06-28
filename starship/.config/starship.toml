@@ -65,7 +65,7 @@ symbol = " "
 
 [directory]
 read_only = " 󰌾"
-style = "bold cyan"
+style = "bold blue"
 truncate_to_repo = false
 truncation_length = 4
 

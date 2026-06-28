@@ -13,7 +13,26 @@ config.term = "wezterm"
 config.term = "xterm-256color"
 
 -- For example, changing the color scheme:
-config.color_scheme = "Catppuccin Mocha (Gogh)"
+local scheme = wezterm.get_builtin_color_schemes()["Catppuccin Mocha"]
+if scheme then
+	-- Softer than stock text/white for transparent blur (stock text is #cdd6f4)
+	scheme.foreground = "#bac2de"
+	scheme.ansi[8] = "#a6adc8"
+	scheme.brights[8] = "#bac2de"
+	config.color_schemes = {
+		["Catppuccin Mocha Soft"] = scheme,
+	}
+	config.color_scheme = "Catppuccin Mocha Soft"
+else
+	config.color_scheme = "Catppuccin Mocha (Gogh)"
+	config.colors = {
+		foreground = "#bac2de",
+		ansi = { [8] = "#a6adc8" },
+		brights = { [8] = "#bac2de" },
+	}
+end
+
+config.bold_brightens_ansi_colors = false
 config.font = wezterm.font_with_fallback({
 	{ family = "MesloLGS Nerd Font", scale = 1.2 },
 	{ family = "HackGen Console NF", scale = 1.2 },
@@ -126,26 +145,16 @@ config.keys = {
 	},
 }
 
--- tmux status
+-- wezterm left status (leader indicator)
 wezterm.on("update-right-status", function(window, _)
-	local SOLID_LEFT_ARROW = ""
-	local ARROW_FOREGROUND = { Foreground = { Color = "#c6a0f6" } }
 	local prefix = ""
-
 	if window:leader_is_active() then
 		prefix = " " .. utf8.char(0x1f30a) -- ocean wave
-		SOLID_LEFT_ARROW = utf8.char(0xe0b2)
 	end
 
-	if window:active_tab():tab_id() ~= 1 then
-		ARROW_FOREGROUND = { Foreground = { Color = "#1e2030" } }
-	end -- arrow color based on if tab is first pane
-
 	window:set_left_status(wezterm.format({
-		{ Background = { Color = "#b7bdf8" } },
+		{ Foreground = { Color = "#89b4fa" } }, -- sapphire/blue: readable on transparent blur
 		{ Text = prefix },
-		ARROW_FOREGROUND,
-		{ Text = SOLID_LEFT_ARROW },
 	}))
 end)
 
