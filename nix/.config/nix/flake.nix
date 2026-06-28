@@ -9,9 +9,12 @@
     mac-app-util.url = "github:hraban/mac-app-util";
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
     rust-overlay.url = "github:oxalica/rust-overlay";
+
+    home-manager.url = "github:nix-community/home-manager/release-25.11";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs-stable";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs-unstable, nixpkgs-stable, mac-app-util, nix-homebrew, rust-overlay, ... }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs-unstable, nixpkgs-stable, mac-app-util, nix-homebrew, rust-overlay, home-manager, ... }:
   let
     # Import overlays
     overlays = import ./overlays/default.nix { inherit rust-overlay; };
@@ -33,10 +36,8 @@
     
     # Create package sets for macOS (Apple Silicon)
     pkgsMacOS = mkPkgs "aarch64-darwin";
-    
-    # Future: Create package sets for Linux (Intel)
-    # pkgsLinux = mkPkgs "x86_64-linux";
-    # pkgsLinuxARM = mkPkgs "aarch64-linux";
+    pkgsLinux = mkPkgs "x86_64-linux";
+
   in
   {
     darwinConfigurations."gawrgare" = nix-darwin.lib.darwinSystem {
@@ -98,19 +99,16 @@
         mac-app-util.darwinModules.default
       ];
     };
-    
-    # Future: Add Linux configurations
-    # nixosConfigurations."my-linux-machine" = nixpkgs-stable.lib.nixosSystem {
-    #   specialArgs = {
-    #     pkgs-stable = pkgsLinux.stable;
-    #     pkgs-unstable = pkgsLinux.unstable;
-    #   };
-    #   modules = [
-    #     ./modules/packages.nix
-    #     ./modules/system.nix
-    #     ./modules/linux/systemd.nix      # Linux-specific module
-    #     ./hosts/linux/my-linux-machine.nix
-    #   ];
-    # };
+
+    homeConfigurations."gawrgare" = home-manager.lib.homeManagerConfiguration {
+      pkgs = pkgsLinux.stable;
+      extraSpecialArgs = {
+        pkgs-stable = pkgsLinux.stable;
+        pkgs-unstable = pkgsLinux.unstable;
+      };
+      modules = [
+        ./hosts/linux/gawrgare.nix
+      ];
+    };
   };
 }
