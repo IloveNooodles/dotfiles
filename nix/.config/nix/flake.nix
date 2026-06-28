@@ -107,6 +107,7 @@
         pkgs-unstable = pkgsLinux.unstable;
       };
       modules = [
+        ./modules/linux/packages.nix
         ./hosts/linux/gawrgare.nix
       ];
     };
