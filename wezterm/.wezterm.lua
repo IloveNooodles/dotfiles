@@ -20,8 +20,9 @@ config.font = wezterm.font_with_fallback({
 })
 config.font_size = 16.0
 
--- config.window_background_opacity = 1.0
 -- config.window_decorations = "RESIZE"
+config.window_background_opacity = 0.6
+config.macos_window_background_blur = 40
 
 config.enable_tab_bar = true
 config.tab_bar_at_bottom = true
