@@ -26,6 +26,7 @@
       "reattach-to-user-namespace"
       "direnv"
       "rtk"
+      "opensuperwhisper"
     ];
 
     casks = [

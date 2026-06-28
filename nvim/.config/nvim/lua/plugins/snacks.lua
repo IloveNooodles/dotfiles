@@ -95,7 +95,7 @@ return {
         },
         grep = {
           hidden = true,
-          ignored = true,
+          -- ignored = true,
           args = {
             "--ignore-case",
           },

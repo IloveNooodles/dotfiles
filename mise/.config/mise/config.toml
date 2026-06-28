@@ -1,6 +1,6 @@
 [tools]
 node = "25"
-ruby = "4.0.1"
+ruby = "3.4.9"
 java = "corretto-25"
 
 [settings]
