@@ -30,6 +30,7 @@
     ];
 
     casks = [
+      "handy"
       "dbeaver-community"
       "snipaste"
       "outerbase-studio"
