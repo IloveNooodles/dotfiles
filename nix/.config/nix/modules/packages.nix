@@ -4,7 +4,9 @@ let
     # Programming languages (from unstable for latest versions)
     pkgs-unstable.ansible
     pkgs-unstable.gcc
-    pkgs-unstable.elixir
+    pkgs-unstable.beamPackages.elixir
+    pkgs-unstable.gleam
+    pkgs-unstable.scala
     pkgs-unstable.lua
     pkgs-unstable.go
     pkgs-unstable.bun
