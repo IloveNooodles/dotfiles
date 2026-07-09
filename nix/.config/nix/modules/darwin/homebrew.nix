@@ -43,6 +43,7 @@
       "font-hack-nerd-font"
       "headlamp"
       "bruno"
+      "herdr"
     ];
 
     masApps = {
