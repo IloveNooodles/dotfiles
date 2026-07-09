@@ -26,13 +26,14 @@
       "reattach-to-user-namespace"
       "direnv"
       "rtk"
-      "opensuperwhisper"
+      "herdr"
     ];
 
     casks = [
+      "opensuperwhisper"
       "handy"
       "dbeaver-community"
-      "snipaste"
+      # "snipaste"
       "outerbase-studio"
       "orbstack"
       "cursor"
@@ -43,7 +44,6 @@
       "font-hack-nerd-font"
       "headlamp"
       "bruno"
-      "herdr"
     ];
 
     masApps = {
