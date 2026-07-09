@@ -1,0 +1,75 @@
+# herdr configuration — imported from dotfiles/tmux/.tmux.conf
+# Reload: herdr server reload-config  (tmux: prefix+r)
+
+onboarding = false
+
+[theme]
+name = "catppuccin"
+
+[theme.custom]
+# tmux used @thm_bg "default" / transparent status bar
+panel_bg = "reset"
+accent = "#74c7ec" # sapphire — active pane border in tmux
+
+[terminal]
+default_shell = "/opt/homebrew/bin/fish"
+new_cwd = "follow"                       # tmux splits used -c "#{pane_current_path}"
+
+[keys]
+prefix = "ctrl+a"
+
+reload_config = "prefix+r"
+resize_mode = "prefix+shift+r"
+
+new_tab = "prefix+c"
+previous_tab = ["prefix+p", "alt+shift+h"] # tmux: M-H
+next_tab = ["prefix+n", "alt+shift+l"]     # tmux: M-L
+switch_tab = "prefix+1..9"                 # tmux: base-index 1
+
+focus_pane_left = ["prefix+h", "ctrl+h"]  # vim-tmux-navigator
+focus_pane_down = ["prefix+j", "ctrl+j"]
+focus_pane_up = ["prefix+k", "ctrl+k"]
+focus_pane_right = ["prefix+l", "ctrl+l"]
+
+split_vertical = "prefix+v"       # tmux used | (not a herdr key name)
+split_horizontal = "prefix+minus" # tmux: -
+
+close_pane = "prefix+x"
+zoom = "prefix+z"
+copy_mode = "prefix+["
+
+[ui]
+mouse_capture = true
+confirm_close = false
+prompt_new_tab_name = true
+pane_borders = true
+pane_gaps = true
+
+[experimental]
+pane_history = false
+
+# --- defaults / optional settings (see `herdr --default-config`) ---
+
+[update]
+# channel = "stable"
+# version_check = true
+# manifest_check = true
+
+# [worktrees]
+# directory = "~/.herdr/worktrees"
+
+# [ui.toast]
+# delivery = "off"
+# delay_seconds = 1
+
+# [ui.sound]
+# enabled = true
+
+# [session]
+# resume_agents_on_restore = true
+
+# [remote]
+# manage_ssh_config = true
+
+# [advanced]
+# scrollback_limit_bytes = 10000000
