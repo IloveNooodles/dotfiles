@@ -56,7 +56,7 @@ let
     pkgs.tree-sitter
     pkgs.opencode
     pkgs.gemini-cli
-    pkgs.codex
+    # pkgs.codex
 
     # Dependencies
     pkgs.libyaml

@@ -46,9 +46,9 @@
       "bruno"
     ];
 
-    masApps = {
-      "RunCat" = 1429033973;
-      "Bitwarden" = 1352778147; 
-    };
+    # masApps = {
+    #   "RunCat" = 1429033973;
+    #   "Bitwarden" = 1352778147; 
+    # };
   };
 }
