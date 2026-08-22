@@ -6,7 +6,6 @@
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-26.05";
     nix-darwin.url = "github:nix-darwin/nix-darwin/nix-darwin-26.05";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs-stable";
-    mac-app-util.url = "github:hraban/mac-app-util";
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
     rust-overlay.url = "github:oxalica/rust-overlay";
 
@@ -14,7 +13,7 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs-stable";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs-unstable, nixpkgs-stable, mac-app-util, nix-homebrew, rust-overlay, home-manager, ... }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs-unstable, nixpkgs-stable, nix-homebrew, rust-overlay, home-manager, ... }:
   let
     # Import overlays
     overlays = import ./overlays/default.nix { inherit rust-overlay; };
@@ -49,13 +48,13 @@
         # Shared modules
         ./modules/packages.nix
         ./modules/system.nix
-        
+
         # Darwin-specific modules
         ./modules/darwin/packages.nix
         ./modules/darwin/system.nix
         ./modules/darwin/homebrew.nix
         ./modules/darwin/vscode.nix
-        
+
         # Host-specific configuration
         ./hosts/darwin/gawrgare.nix
         nix-homebrew.darwinModules.nix-homebrew
@@ -67,7 +66,6 @@
             autoMigrate = true;
           };
         }
-        mac-app-util.darwinModules.default
       ];
     };
 
@@ -82,13 +80,13 @@
         # Shared modules
         ./modules/packages.nix
         ./modules/system.nix
-        
+
         # Darwin-specific modules
         ./modules/darwin/packages.nix
         ./modules/darwin/system.nix
         ./modules/darwin/homebrew.nix
         ./modules/darwin/vscode.nix
-        
+
         # Host-specific configuration
         ./hosts/darwin/gawrgare-home.nix
         nix-homebrew.darwinModules.nix-homebrew
@@ -100,7 +98,6 @@
             autoMigrate = true;
           };
         }
-        mac-app-util.darwinModules.default
       ];
     };
 
