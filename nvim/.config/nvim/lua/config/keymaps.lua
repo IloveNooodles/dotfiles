@@ -41,6 +41,25 @@ vim.keymap.set("n", "]]", "]]zz", opts)
 vim.keymap.set("n", "[{", "[{zz", opts)
 vim.keymap.set("n", "]}", "]}zz", opts)
 
+-- Open current file/folder in system app (gx behavior, but for buffer path)
+vim.keymap.set("n", "<leader>gx", function()
+  local file = vim.api.nvim_buf_get_name(0)
+  if file == "" then
+    vim.notify("No file to open", vim.log.levels.ERROR)
+    return
+  end
+  require("lazy.util").open(vim.fn.fnamemodify(file, ":p"), { system = true })
+end, { desc = "Open file externally" })
+
+vim.keymap.set("n", "<leader>gX", function()
+  local file = vim.api.nvim_buf_get_name(0)
+  if file == "" then
+    vim.notify("No folder to open", vim.log.levels.ERROR)
+    return
+  end
+  require("lazy.util").open(vim.fn.fnamemodify(file, ":p:h"), { system = true })
+end, { desc = "Open folder externally" })
+
 if vim.g.vscode then
   local keymap = vim.keymap.set
   local vscode = require("vscode")
