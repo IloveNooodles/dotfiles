@@ -11,6 +11,9 @@ starship init fish | source
 zoxide init fish | source
 direnv hook fish | source
 fzf --fish | source
+# Clear inherited __MISE_ORIG_PATH so mise captures a fresh one each shell start
+# (prevents tmux from inheriting a stale path that excludes mise shims)
+set -e __MISE_ORIG_PATH
 mise activate fish | source
 eval (tmuxifier init - fish)
 
