@@ -23,14 +23,18 @@ let
     pkgs.just
     pkgs.delta
 
+    # CLI tools (from unstable)
+    pkgs-unstable.lazygit
+    pkgs-unstable.lazydocker
+    pkgs-unstable.ast-grep
+    pkgs-unstable.prek
+
     # Tools (from stable)
     pkgs.awscli2
     pkgs.terraform
     pkgs.ffmpeg
     pkgs.gitleaks
     pkgs.stow
-    pkgs.lazygit
-    pkgs.lazydocker
     pkgs.kubectl
     pkgs.k9s
     pkgs.mise
@@ -39,7 +43,6 @@ let
     pkgs.starship
     pkgs.talosctl
     pkgs.go-task
-    pkgs.ast-grep
     pkgs.nil
     pkgs.asciinema
     pkgs.croc
@@ -50,13 +53,14 @@ let
     pkgs.graphviz
     pkgs.coursier
     pkgs.gh
-    pkgs.github-copilot-cli
     pkgs.rust-analyzer
-    pkgs.prek
     pkgs.tree-sitter
-    pkgs.opencode
-    pkgs.gemini-cli
-    # pkgs.codex
+
+    # AI tools (from unstable)
+    pkgs-unstable.github-copilot-cli
+    pkgs-unstable.opencode
+    pkgs-unstable.gemini-cli
+    pkgs-unstable.codex
 
     # Dependencies
     pkgs.libyaml
