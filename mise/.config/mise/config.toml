@@ -1,7 +1,12 @@
 [tools]
-node = "25"
-ruby = "3.4.9"
+node = "26"
+ruby = "3.4.10"
 java = "corretto-25"
+yarn = "latest"
+pnpm = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = ["ruby"]
+
+[settings.ruby]
+compile = true
