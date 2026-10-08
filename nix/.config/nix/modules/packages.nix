@@ -57,10 +57,10 @@ let
     pkgs.tree-sitter
 
     # AI tools (from unstable)
-    pkgs-unstable.github-copilot-cli
+    # pkgs-unstable.github-copilot-cli
     pkgs-unstable.opencode
     pkgs-unstable.gemini-cli
-    pkgs-unstable.codex
+    # pkgs-unstable.codex
 
     # Dependencies
     pkgs.libyaml

@@ -36,14 +36,16 @@
       # "snipaste"
       "outerbase-studio"
       "orbstack"
-      "cursor"
-      "kindavim"
+      # "cursor"
+      # "kindavim"
       "keycastr"
       "tailscale-app"
       "aerospace"
       "font-hack-nerd-font"
-      "headlamp"
+      # "headlamp"
       "bruno"
+      "codex"
+      "copilot-cli"
     ];
 
     # masApps = {
