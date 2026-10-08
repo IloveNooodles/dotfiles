@@ -4,6 +4,7 @@ ruby = "3.4.10"
 java = "corretto-25"
 yarn = "latest"
 pnpm = "latest"
+python = "3.14.8"
 
 [settings]
 idiomatic_version_file_enable_tools = ["ruby"]
