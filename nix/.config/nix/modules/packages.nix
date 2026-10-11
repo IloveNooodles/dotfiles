@@ -55,6 +55,7 @@ let
     pkgs.gh
     pkgs.rust-analyzer
     pkgs.tree-sitter
+    pkgs.sqlite
 
     # AI tools (from unstable)
     # pkgs-unstable.github-copilot-cli
@@ -64,6 +65,8 @@ let
 
     # Dependencies
     pkgs.libyaml
+    pkgs.libmysqlclient
+    pkgs.libpq
   ];
 in
 # ponytail: dual-use — nix-darwin module when `lib` is in args, plain list otherwise
