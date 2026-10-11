@@ -53,7 +53,7 @@
         ./modules/darwin/packages.nix
         ./modules/darwin/system.nix
         ./modules/darwin/homebrew.nix
-        ./modules/darwin/vscode.nix
+        # ./modules/darwin/vscode.nix
 
         # Host-specific configuration
         ./hosts/darwin/gawrgare.nix
@@ -85,7 +85,7 @@
         ./modules/darwin/packages.nix
         ./modules/darwin/system.nix
         ./modules/darwin/homebrew.nix
-        ./modules/darwin/vscode.nix
+        # ./modules/darwin/vscode.nix
 
         # Host-specific configuration
         ./hosts/darwin/gawrgare-home.nix
