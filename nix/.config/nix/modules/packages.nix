@@ -12,6 +12,7 @@ let
     pkgs-unstable.bun
     pkgs-unstable.zig
     pkgs-unstable.rust-bin.stable.latest.default
+    pkgs-unstable.diesel-cli
 
     # CLI tools (from stable)
     pkgs.bat
@@ -67,6 +68,9 @@ let
     pkgs.libyaml
     pkgs.libmysqlclient
     pkgs.libpq
+    pkgs.libiconv
+    pkgs.pkg-config
+    pkgs.gnumake
   ];
 in
 # ponytail: dual-use — nix-darwin module when `lib` is in args, plain list otherwise
