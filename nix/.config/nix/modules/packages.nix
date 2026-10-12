@@ -34,6 +34,7 @@ let
     pkgs-unstable.oha
     pkgs-unstable.cmctl
     pkgs-unstable.talosctl
+    pkgs-unstable.cilium-cli
 
     # Tools (from stable)
     pkgs.awscli2
