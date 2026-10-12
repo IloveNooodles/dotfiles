@@ -33,6 +33,7 @@ let
     pkgs-unstable.popeye
     pkgs-unstable.oha
     pkgs-unstable.cmctl
+    pkgs-unstable.talosctl
 
     # Tools (from stable)
     pkgs.awscli2
@@ -46,7 +47,6 @@ let
     pkgs.tmux
     pkgs.tmuxifier
     pkgs.starship
-    pkgs.talosctl
     pkgs.go-task
     pkgs.nil
     pkgs.asciinema
