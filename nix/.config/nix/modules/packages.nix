@@ -73,8 +73,6 @@ let
     pkgs.libyaml
     pkgs.libmysqlclient
     pkgs.libpq
-    pkgs.libiconv
-    pkgs.pkg-config
     pkgs.gnumake
   ];
 in

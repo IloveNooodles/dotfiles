@@ -27,6 +27,8 @@
       "direnv"
       "rtk"
       "herdr"
+      "libiconv"
+      "pkg-config"
     ];
 
     casks = [
