@@ -29,6 +29,10 @@ let
     pkgs-unstable.lazydocker
     pkgs-unstable.ast-grep
     pkgs-unstable.prek
+    pkgs-unstable.trivy
+    pkgs-unstable.popeye
+    pkgs-unstable.oha
+    pkgs-unstable.cmctl
 
     # Tools (from stable)
     pkgs.awscli2
