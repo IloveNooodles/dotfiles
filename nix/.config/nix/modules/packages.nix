@@ -11,8 +11,17 @@ let
     pkgs-unstable.go
     pkgs-unstable.bun
     pkgs-unstable.zig
-    pkgs-unstable.rust-bin.stable.latest.default
+    (pkgs-unstable.rust-bin.stable.latest.default.override {
+      targets = [
+        "aarch64-apple-darwin"
+        "x86_64-pc-windows-gnu"
+        "x86_64-unknown-linux-gnu"
+        "wasm32-unknown-unknown"
+        "wasm32-wasip1"
+      ];
+    })
     pkgs-unstable.diesel-cli
+    pkgs-unstable.trunk
 
     # CLI tools (from stable)
     pkgs.bat
@@ -74,6 +83,8 @@ let
     pkgs.libmysqlclient
     pkgs.libpq
     pkgs.gnumake
+    pkgs.libiconv
+    pkgs.pkg-config
   ];
 in
 # ponytail: dual-use — nix-darwin module when `lib` is in args, plain list otherwise

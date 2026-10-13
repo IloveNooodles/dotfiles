@@ -1,5 +1,12 @@
 { config, pkgs, ... }:
 {
+  environment.variables.PKG_CONFIG_PATH = pkgs.lib.concatStringsSep ":" [
+    "${pkgs.libyaml.dev}/lib/pkgconfig"
+    "${pkgs.sqlite.dev}/lib/pkgconfig"
+    "${pkgs.libpq.dev}/lib/pkgconfig"
+    "${pkgs.libmysqlclient.dev}/lib/pkgconfig"
+  ];
+
   # Nix settings
   nix.settings = {
     experimental-features = "nix-command flakes";
