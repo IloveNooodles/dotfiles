@@ -1,10 +1,15 @@
-{ config, pkgs, ... }:
+{ config, pkgs, pkgs-unstable, ... }:
 {
+  # Used for rust :(, apparently it didn't check the pkg-config build
   environment.variables.PKG_CONFIG_PATH = pkgs.lib.concatStringsSep ":" [
     "${pkgs.libyaml.dev}/lib/pkgconfig"
     "${pkgs.sqlite.dev}/lib/pkgconfig"
     "${pkgs.libpq.dev}/lib/pkgconfig"
     "${pkgs.libmysqlclient.dev}/lib/pkgconfig"
+  ];
+  environment.variables.LIBRARY_PATH = pkgs.lib.concatStringsSep ":" [
+    "${pkgs.libiconv}/lib"
+    "${pkgs.sqlite}/lib"
   ];
 
   # Nix settings
@@ -21,8 +26,9 @@
   };
 
   # Enable alternative shell support
-  programs = {
-    fish.enable = true;
+  programs.fish = {
+    enable = true;
+    package = pkgs-unstable.fish;
   };
 
   # System configuration
