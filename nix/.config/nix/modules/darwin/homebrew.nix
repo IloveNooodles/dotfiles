@@ -21,12 +21,14 @@
       "uv"
       "telepresenceio/telepresence/telepresence-oss"
       "datadog-labs/pack/pup"
-      "fish"
+      # "fish"
       "worktrunk"
       "reattach-to-user-namespace"
       "direnv"
       "rtk"
       "herdr"
+      "jj"
+      "raine/workmux/workmux"
     ];
 
     casks = [

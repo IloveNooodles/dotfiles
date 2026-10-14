@@ -14,3 +14,4 @@ alias cat "bat --paging=never"
 alias grep "rg --color=auto"
 alias find fd
 alias ls 'eza -lhabg --group-directories-first --icons=always --git --git-repos --color=always --hyperlink --time-style=long-iso -F always'
+alias wm workmux

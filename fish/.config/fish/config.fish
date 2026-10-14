@@ -10,7 +10,10 @@ source ~/.config/fish/conf.d/fzf.fish
 starship init fish | source
 zoxide init fish | source
 direnv hook fish | source
+workmux completions fish | source
+
 fzf --fish | source
+
 # Clear inherited __MISE_ORIG_PATH so mise captures a fresh one each shell start
 # (prevents tmux from inheriting a stale path that excludes mise shims)
 set -e __MISE_ORIG_PATH
