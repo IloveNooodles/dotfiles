@@ -9,7 +9,7 @@
   ];
   environment.variables.LIBRARY_PATH = pkgs.lib.concatStringsSep ":" [
     "${pkgs.libiconv}/lib"
-    "${pkgs.sqlite}/lib"
+    "${pkgs.sqlite.dev}/lib"
   ];
 
   # Nix settings

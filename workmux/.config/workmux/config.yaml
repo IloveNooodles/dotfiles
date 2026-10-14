@@ -75,7 +75,7 @@
 # Mode for tmux operations: window (default) or session.
 # - window: Create windows within the current tmux session
 # - session: Create tmux sessions for each worktree
-# mode: session
+mode: window
 
 # Session mode only. Session to return to when a workmux session is closed or
 # removed, instead of whichever session the client was in previously.
@@ -84,7 +84,7 @@
 
 # Placement for new tmux windows in window mode.
 # Options: after_current (default), rightmost
-# window_placement: rightmost
+window_placement: rightmost
 
 # Custom tmux pane layout (mutually exclusive with 'windows').
 # Default: Two-pane layout with shell and clear command.
