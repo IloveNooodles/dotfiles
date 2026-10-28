@@ -11,6 +11,7 @@
       "FelixKratz/formulae"
       "nikitabobko/tap"
       "datadog-labs/pack"
+      "siderolabs/tap"
     ];
 
     brews = [
@@ -29,6 +30,7 @@
       "herdr"
       "jj"
       "raine/workmux/workmux"
+      "siderolabs/tap/sidero-tools"
     ];
 
     casks = [

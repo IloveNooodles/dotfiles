@@ -44,6 +44,7 @@ let
     pkgs-unstable.cmctl
     pkgs-unstable.talosctl
     pkgs-unstable.cilium-cli
+    pkgs-unstable.tailwindcss_4
 
     # Tools (from stable)
     pkgs.awscli2

@@ -11,6 +11,7 @@ starship init fish | source
 zoxide init fish | source
 direnv hook fish | source
 workmux completions fish | source
+jj util completion fish | source
 
 fzf --fish | source
 
