@@ -11,7 +11,8 @@ let
     pkgs-unstable.go
     pkgs-unstable.bun
     pkgs-unstable.zig
-    (pkgs-unstable.rust-bin.stable.latest.default.override {
+    (pkgs-unstable.rust-bin.selectLatestNightlyWith (toolchain: toolchain.default.override {
+      extensions = [ "rustc-codegen-cranelift-preview" ];
       targets = [
         "aarch64-apple-darwin"
         "x86_64-pc-windows-gnu"
@@ -19,7 +20,7 @@ let
         "wasm32-unknown-unknown"
         "wasm32-wasip1"
       ];
-    })
+    }))
     pkgs-unstable.diesel-cli
     pkgs-unstable.trunk
 
