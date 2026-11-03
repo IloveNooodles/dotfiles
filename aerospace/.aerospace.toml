@@ -1,5 +1,6 @@
 # Start AeroSpace at login
-start-at-login = false
+start-at-login = true
+config-version = 2
 
 # Run Sketchybar together with AeroSpace
 # sketchbar has a built-in detection of already running process,

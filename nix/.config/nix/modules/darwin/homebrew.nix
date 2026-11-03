@@ -35,10 +35,10 @@
 
     casks = [
       "opensuperwhisper"
-      "handy"
+      # "handy"
       "dbeaver-community"
       # "snipaste"
-      "outerbase-studio"
+      # "outerbase-studio"
       "orbstack"
       # "cursor"
       # "kindavim"
