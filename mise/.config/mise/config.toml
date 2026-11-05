@@ -1,6 +1,6 @@
 [tools]
-node = "26"
-ruby = "4.0.7"
+node = "26.13.0"
+ruby = "4.0.9"
 java = "corretto-25"
 yarn = "latest"
 pnpm = "latest"

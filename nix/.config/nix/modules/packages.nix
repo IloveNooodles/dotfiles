@@ -76,7 +76,7 @@ let
 
     # AI tools (from unstable)
     # pkgs-unstable.github-copilot-cli
-    pkgs-unstable.opencode
+    # pkgs-unstable.opencode
     pkgs-unstable.gemini-cli
     # pkgs-unstable.codex
 
