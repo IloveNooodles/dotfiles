@@ -10,7 +10,9 @@ source ~/.config/fish/conf.d/fzf.fish
 starship init fish | source
 zoxide init fish | source
 direnv hook fish | source
-workmux completions fish | source
+if command -q workmux
+    workmux completions fish | source
+end
 jj util completion fish | source
 
 fzf --fish | source
@@ -21,12 +23,21 @@ set -e __MISE_ORIG_PATH
 mise activate fish | source
 eval (tmuxifier init - fish)
 
-# Added by OrbStack: command-line tools and integration
-# This won't be added again if you remove it.
-source ~/.orbstack/shell/init2.fish 2>/dev/null || :
+# OrbStack integration on macOS.
+if test (uname) = Darwin; and test -f ~/.orbstack/shell/init2.fish
+    source ~/.orbstack/shell/init2.fish
+end
 
 # pnpm
-set -gx PNPM_HOME "/Users/rahman.muhammad/Library/pnpm"
+if test (uname) = Darwin
+    set -gx PNPM_HOME "$HOME/Library/pnpm"
+else
+    set -l data_home "$HOME/.local/share"
+    if set -q XDG_DATA_HOME; and test -n "$XDG_DATA_HOME"
+        set data_home "$XDG_DATA_HOME"
+    end
+    set -gx PNPM_HOME "$data_home/pnpm"
+end
 if not string match -q -- $PNPM_HOME $PATH
     set -gx PATH "$PNPM_HOME" $PATH
 end
