@@ -12,7 +12,14 @@ let
     pkgs-unstable.bun
     pkgs-unstable.zig
     (pkgs-unstable.rust-bin.selectLatestNightlyWith (toolchain: toolchain.default.override {
-      extensions = [ "rustc-codegen-cranelift-preview" ];
+      extensions = [
+        "rust-src"
+        "rust-analyzer"
+        "rustc-codegen-cranelift-preview"
+        "miri"
+        "llvm-tools"
+      ];
+
       targets = [
         "aarch64-apple-darwin"
         "x86_64-pc-windows-gnu"
@@ -46,6 +53,7 @@ let
     pkgs-unstable.talosctl
     pkgs-unstable.cilium-cli
     pkgs-unstable.tailwindcss_4
+    pkgs-unstable.mold
 
     # Tools (from stable)
     pkgs.awscli2
@@ -70,7 +78,6 @@ let
     pkgs.graphviz
     pkgs.coursier
     pkgs.gh
-    pkgs.rust-analyzer
     pkgs.tree-sitter
     pkgs.sqlite
 

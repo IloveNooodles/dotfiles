@@ -1,0 +1,59 @@
+# =========================================
+# Rust Nightly - Global Cargo Configuration
+# =========================================
+
+# Experimental parallel compiler frontend
+[build]
+rustflags = ["-Zthreads=8"]
+
+# Enable experimental Cargo features
+[unstable]
+codegen-backend = true
+
+# =========================================
+# Platform-specific linkers
+# =========================================
+
+# Linux x86_64 - GCC + mold
+[target.x86_64-unknown-linux-gnu]
+linker = "gcc"
+rustflags = ["-Zthreads=8", "-C", "link-arg=-fuse-ld=mold"]
+
+# macOS Apple Silicon - Clang + Apple linker
+[target.aarch64-apple-darwin]
+linker = "clang"
+
+# macOS Intel - Clang + Apple linker
+[target.x86_64-apple-darwin]
+linker = "clang"
+
+# =========================================
+# Development profile - Fast compilation
+# =========================================
+
+[profile.dev]
+codegen-backend = "cranelift"
+debug = "line-tables-only"
+incremental = true
+
+# =========================================
+# Release profile - Optimized binaries
+# =========================================
+
+[profile.release]
+codegen-backend = "llvm"
+opt-level = 3
+lto = "thin"
+codegen-units = 16
+
+# =========================================
+# Cargo aliases
+# =========================================
+
+[alias]
+b = "build"
+br = "build --release"
+c = "check"
+t = "test"
+cl = "clippy"
+f = "fmt"
