@@ -3,7 +3,7 @@ let
   packages = [
     # Programming languages (from unstable for latest versions)
     pkgs-unstable.ansible
-    pkgs-unstable.gcc
+    # pkgs-unstable.gcc
     pkgs-unstable.beamPackages.elixir
     pkgs-unstable.gleam
     pkgs-unstable.scala
