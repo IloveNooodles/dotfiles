@@ -6,6 +6,13 @@ return {
         backend = "tmux",
         enabled = true,
       },
+      -- Codex draws its own full-screen TUI, so tmux capture-pane has no history to dump.
+      -- Let Codex handle scrolling instead of sidekick-sbs scrollback.
+      tools = {
+        codex = { native_scroll = true },
+        claude = { native_scroll = true },
+        copilot = { native_scroll = true },
+      },
     },
   },
   keys = {
