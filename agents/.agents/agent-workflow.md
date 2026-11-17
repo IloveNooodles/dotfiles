@@ -18,7 +18,7 @@ Curated cross-harness workflow (Claude Code, Codex, OpenCode, Pi): worktree isol
 | Review | `review-pr`, `code-review`, `requesting-code-review` | Self-review or others' PRs |
 | Land | `merge`, `finishing-a-development-branch` (+ `reflect`) | `reflect` = distill session learnings into concrete edits after merge |
 
-Sources: personal skills (`worktree` `workmux` `coordinator` `open-pr` `merge` `rebase` `no-mistakes`),
+Sources: personal skills (`worktree` `workmux` `coordinator` `open-pr` `merge` `rebase` `no-mistakes` `firstmate`),
 superpowers, wshobson/agents, addyosmani/agent-skills, mattpocock/skills (`how` `why`), pstack (`swarm` `architect` `arena` `reflect`).
 Install the equivalents per harness — the phases matter more than the names.
 
@@ -36,6 +36,7 @@ Install the equivalents per harness — the phases matter more than the names.
 - `triage` — for maintaining OSS issues/external PRs
 - `grilling` / `interview-me` / `loop-me` — pre-plan clarification; `brainstorming` already covers it
 - `implement` / `implement-spec` — overlaps the TDD row
+- `firstmate` — full captain+crew distro (supervised fleets, restart-proof state, remote secondmates); heavier than the default loop. Opt in per session: `/firstmate` in Claude Code, or read `~/.agents/skills/firstmate/SKILL.md` from any harness (distro lives at `~/firstmate`, update with `git pull`)
 
 ## Invocation per harness
 
