@@ -30,6 +30,26 @@ My desktop configuration for various tools
 - lazyGit
 - ideavim
 - ghostty
+- agents
+- codex
+
+## Agents (Claude Code, Codex, OpenCode, Pi)
+
+Shared cross-harness agent instructions live in `~/.agents` (stowed from `agents/`):
+
+- `AGENTS.md` — slim always-on index: rtk, gh-axi, ponytail rules
+- `RTK.md` — rtk details (meta commands, install checks), loaded on demand
+- `GH_AXI.md` — gh-axi details (command groups, fallback policy), loaded on demand
+- `agent-workflow.md` — curated worktree → investigate → PR workflow + skill list, loaded on demand
+
+Codex-specific variants live in `~/.codex` (stowed from `codex/`). Claude Code reads
+the shared files via `@AGENTS.md` / `@RTK.md` imports in `~/.claude/CLAUDE.md` and
+symlinks in `~/.claude/`.
+
+Claude Code plugins used (install via `/plugin marketplace add`):
+
+- `DietrichGebert/ponytail` — ponytail mode
+- `ayghri/i-have-adhd` — ADHD mode (`touch ~/.claude/.i-have-adhd-always` for always-on)
 
 ## Tools
 
