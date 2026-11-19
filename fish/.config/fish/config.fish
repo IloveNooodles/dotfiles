@@ -5,6 +5,7 @@ source ~/.config/fish/conf.d/path.fish
 source ~/.config/fish/conf.d/functions.fish
 source ~/.config/fish/conf.d/nix.fish
 source ~/.config/fish/conf.d/fzf.fish
+source ~/.config/vite-plus/env.fish
 
 ## Plugins
 starship init fish | source
@@ -42,3 +43,10 @@ if not string match -q -- $PNPM_HOME $PATH
     set -gx PATH "$PNPM_HOME" $PATH
 end
 # pnpm end
+
+# opencode
+fish_add_path ~/.opencode/bin
+
+# Pi agent model configuration (auto-load Qwen 3.5-9B)
+set -gx PI_MODEL "qwen3.5-9b-the-defiant-fable-uncensored-heretic-neo-imatrix-max-mtp"
+set -gx PI_PROVIDER lmstudio
